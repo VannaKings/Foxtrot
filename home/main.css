@@ -1,0 +1,15 @@
+.navbar{
+    background-color: #ccc;
+    padding-bottom: 15px!important;
+}
+#btn-search{
+    background-color: white;
+}
+.nav-item{
+    background-color: #eee;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+img{
+    height: 350px;
+}

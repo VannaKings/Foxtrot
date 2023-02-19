@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    margin: 30px auto;
+    display: block;
+    width: 200px;
+}
+label{
+    display: block;
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: start;
+    padding-left: 20px;
+}
+.container{
+    max-width: 250px;
+    margin: 0 auto;
+    height: 250px;
+    padding: 40px 50px;
+    border: solid 1px black;
+    text-align: center;
+}
+h2{
+    margin: 10px 0;
+}
+
+.login{
+    margin-top: 35px;
+}
+input{
+    width: 200px;
+    height: 25px;
+}
+.btn{
+    margin-top: 15px;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: solid 1px #333;
+}
