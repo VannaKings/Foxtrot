@@ -1,0 +1,89 @@
+.navbar{
+    background-color: #ccc;
+    padding-bottom: 15px!important;
+}
+#btn-search{
+    background-color: white;
+}
+.nav-item{
+    background-color: #eee;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+img{
+    height: 350px;
+}
+.container-banner{
+    height: 200px;
+    background-color: rgb(219, 194, 162);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.container-banner h1{
+    padding-top: 60px;
+}
+
+.container-products{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    margin: 80px 0;
+    margin-top: 70px;
+}
+.card{
+    width: 22em!important;
+    margin: 0 10px;
+}
+.card img{
+    max-width: 300px;
+    height: 280px;
+    display: block;
+    margin: 20px auto;
+}
+.card{
+    text-align: center;
+}
+.arrow-content{
+    background-color: #212121;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    padding: 5px;
+    
+}
+
+.container-footer{
+    padding-top: 50px;
+}
+.container-footer {
+    position: relative;
+    bottom: 0;
+    background-color: #ccc;
+    height: 200px;
+}
+.container-footer > *{
+    background-color: #ccc;
+    
+}
+.container-footer h4{
+    text-align: center;
+    padding: 15px 0;
+}
+.container-footer h5{
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.content-footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    
+}
+.payment img{
+    width: 200px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
