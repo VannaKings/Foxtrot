@@ -1,7 +1,67 @@
-.navbar{
-    background-color: #ccc;
-    padding-bottom: 15px!important;
+:root
+{
+    --cinza: #ccc;
 }
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+
+/* Cabeçalho */
+
+#header{
+    position: fixed;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    z-index: +1;
+    width: 100%;
+}
+
+.navbar{
+
+    padding-bottom: 15px!important;
+    border-radius: 65px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 16%);
+    height: 75px;
+    width: 79vw;
+    max-width: 800px;
+    /* margin: 15px auto 0; */
+    background-color: white;
+}
+
+.container-fluid{
+    display: flex!important;
+    justify-content: space-around!important;
+    align-items: center!important;
+}
+
+.botao{
+    background-color: white!important;
+    color: #212121!important;
+    border: none!important;
+}
+.botao i{
+    margin-right: 5px;
+}
+
+.fa-cart-shopping{
+    margin-top: 5px;
+    font-size: 20px;
+    
+}
+
+.espaco{
+    padding: 50px;
+}
+
 #btn-search{
     background-color: white;
 }
@@ -13,12 +73,49 @@
 img{
     height: 350px;
 }
-.container-banner{
-    height: 200px;
-    background-color: rgb(219, 194, 162);
-    text-align: center;
-    margin-bottom: 20px;
+
+.carrinho{
+    margin-right: 10px;
 }
+
+/* Seção ---- Top */
+
+.secao-cabecalho
+{
+    background-color: rgb(231, 231, 231);
+    max-width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.secao-cabecalho .container
+{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Main */
+
+.carousel{
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+.carousel img{
+    border-radius: 70px;
+}
+
+.container-banner{
+    height: 100px;
+    text-align: center;
+}
+
 .container-banner h1{
     padding-top: 60px;
 }
@@ -31,6 +128,30 @@ img{
     margin: 80px 0;
     margin-top: 70px;
 }
+
+.titulo h2{
+    text-align: center;
+    margin-top: 60px;
+}
+.mais-procurados
+{
+    display: grid;
+    grid-template-columns: 0.1fr 0.1fr 0.1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 200px;
+}
+.mais-procurados a
+{
+    margin-bottom: 40px;
+    margin-right: 50px;
+}
+
+.mais-procurados img{
+    max-width: 150px;
+    max-height: 100px;
+}
+
 .card{
     width: 22em!important;
     margin: 0 10px;
@@ -54,35 +175,44 @@ img{
     
 }
 
+/* Rodapé */
+
 .container-footer{
-    padding-top: 50px;
-}
-.container-footer {
-    position: relative;
-    bottom: 0;
+    padding-top: 60px;
+    border-top-right-radius: 70px;
+    border-top-left-radius: 70px;
     background-color: #ccc;
-    height: 200px;
 }
-.container-footer > *{
-    background-color: #ccc;
-    
-}
+
 .container-footer h4{
     text-align: center;
     padding: 15px 0;
 }
+
+.container-footer .copyright{
+    text-align: center;
+    font-weight: bold;
+    margin: none!important;
+    background-color: #ccc;
+}
+
 .container-footer h5{
     text-transform: uppercase;
     margin-bottom: 12px;
 }
+
 .content-footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     
 }
+.payment h5
+{
+    text-align: center;
+}
 .payment img{
-    width: 200px;
+    width: 300px;
     height: 100px;
     display: block;
     margin: 0 auto;
