@@ -1,0 +1,33 @@
+:root
+{
+ --cinza: #ccc;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    max-width: 600px!important;
+    margin: 0 auto;
+    padding: 40px 50px;
+    border: solid 3px var(--cinza);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container form
+{
+    margin: 10px 30px;
+}
