@@ -102,11 +102,10 @@
                     <div class="informacoes">
                         <h2>{{$produto->PRODUTO_NOME}}</h2>
 
-                        <p class='preco-destaque'>R$ {{$produto->Preco()}} </p>
                         <p>De: <strong class='preco-antigo'>R$ <s>{{$produto->PRODUTO_PRECO}}</s></strong></p>
-                        <p class='informacoes-texto'>Categoria: imaginação</p>
+                        <p class='preco-destaque'>R$ {{$produto->Preco()}} </p>
+                        <p class='informacoes-texto'>Categoria: {{$produto->getCategoria()}}</p>
                         <p class='informacoes-texto'><i class='fa-solid fa-box' style='margin-right:10px;'></i>Estoque: 1</p>
-
                         <div class="adicionar">
                             <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
                             <input type="tel">

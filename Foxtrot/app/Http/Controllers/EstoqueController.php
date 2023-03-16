@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produto;
+use App\Models\Estoque;
 use Illuminate\Http\Request;
 
-class ProdutoController extends Controller
+class EstoqueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,15 +34,15 @@ class ProdutoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Produto $produto){
-
-        return view('home.produto')->with('produto', $produto);
+    public function show(Estoque $estoque)
+    {
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Produto $produto)
+    public function edit(Estoque $estoque)
     {
         //
     }
@@ -50,7 +50,7 @@ class ProdutoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Produto $produto)
+    public function update(Request $request, Estoque $estoque)
     {
         //
     }
@@ -58,18 +58,8 @@ class ProdutoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Produto $produto)
+    public function destroy(Estoque $estoque)
     {
         //
     }
-
-    public function home(){
-        return view('home.index')->with('produtos', Produto::all());
-    }
-
-    public function produtos(){
-        return view('home.section')->with('produtos', Produto::all());
-    }
-
-
 }
