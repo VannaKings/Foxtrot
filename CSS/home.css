@@ -1,6 +1,15 @@
 :root
 {
     --cinza: #ccc;
+    --preto: #1b0c22;
+    --laranja: #ff5e3d;
+    --azul: #2487ee;
+    --cinzaEscuro: #535562;
+    --roxo: #7632d5;
+    --azulEsverdeado: #0BCBB0;
+    --verde: #17ae27;
+    --amarelo: #f0dc1b;
+    --vermelho: #ff5052;
 }
 
 *{
