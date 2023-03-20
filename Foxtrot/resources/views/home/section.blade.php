@@ -23,7 +23,7 @@
 <div id="header">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="max-width: 55px;"><img src="/images/logo-abreviada.png" alt="" style="max-width: 100px; max-height: 50px;"></a>
+            <a class="navbar-brand" href="/" style="max-width: 55px;"><img src="/images/logo-abreviada.png" alt="" style="max-width: 100px; max-height: 50px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,13 +33,13 @@
                 <i class="fa-solid fa-bars"></i>Menu
                 </button>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="index.blade.php">Inicio</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Bonecas</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Carrinhos</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Colecionaveis</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Lego</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Esportes</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Bebês</a></li>
+                <li><a class="dropdown-item" href="/">Inicio</a></li>
+                <li><a class="dropdown-item" href="/produtos">Bonecas</a></li>
+                <li><a class="dropdown-item" href="/produtos">Carrinhos</a></li>
+                <li><a class="dropdown-item" href="/produtos">Colecionaveis</a></li>
+                <li><a class="dropdown-item" href="/produtos">Lego</a></li>
+                <li><a class="dropdown-item" href="/produtos">Esportes</a></li>
+                <li><a class="dropdown-item" href="/produtos">Bebês</a></li>
                 </ul>
             </div>
 
@@ -101,6 +101,14 @@
                   </div>
                   <p>Categorias</p>
                   <div class="filter-box">
+                  <!-- @foreach($categorias as $categoria)
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                      <label class="form-check-label" for="flexCheckDefault">
+                        {{$categoria->CATEGORIA_NOME}}
+                      </label>
+                    </div>
+                    @endforeach -->
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                       <label class="form-check-label" for="flexCheckDefault">
@@ -192,8 +200,8 @@
                     <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
                     <p class="card-text">Preço: R$ {{$produto->Preco()}}</p>
                     <div class="buttons">
-                      <a href="/home/produto.html" class="btn btn-secondary"><i class="fa-solid fa-magnifying-glass"></i>Ver mais</a>
-                      <a href="/home/produto.html" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Adicionar</a>
+                      <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-secondary"><i class="fa-solid fa-magnifying-glass"></i>Ver mais</a>
+                      <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Adicionar</a>
                     </div>
                   </div>
                 </div>

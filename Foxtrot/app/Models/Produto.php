@@ -34,8 +34,13 @@ class Produto extends Model
         $produtoCategoria = Categoria::find($this->CATEGORIA_ID);
         return $produtoCategoria->CATEGORIA_NOME;
     }
-    // public function getEstoque(){
-    //     $produtoEstoque = Estoque::find($this->PRODUTO_ID);
-    //     return $produtoEstoque->PRODUTO_QTD;
-    // }{{$produto->getEstoque()}}
+    public function getEstoque(){
+        $produtoEstoque = Estoque::find($this->PRODUTO_ID);
+        if($produtoEstoque != null){
+            return $produtoEstoque->PRODUTO_QTD;
+        }else{
+            return 'Indisponível';
+        }
+
+    }
 }

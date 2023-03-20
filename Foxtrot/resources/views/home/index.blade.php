@@ -24,7 +24,7 @@
     <div id="header">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="max-width: 55px;"><img src="/images/logo-abreviada.png" alt="" style="max-width: 100px; max-height: 50px;"></a>
+            <a class="navbar-brand" href="/" style="max-width: 55px;"><img src="/images/logo-abreviada.png" alt="" style="max-width: 100px; max-height: 50px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,13 +34,13 @@
                 <i class="fa-solid fa-bars"></i>Menu
                 </button>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/home/index.html">Inicio</a></li>
-                <li><a class="dropdown-item" href="/home/section.html">Bonecas</a></li>
-                <li><a class="dropdown-item" href="/home/section.html">Carrinhos</a></li>
-                <li><a class="dropdown-item" href="/home/section.html">Colecionaveis</a></li>
-                <li><a class="dropdown-item" href="/home/section.html">Lego</a></li>
-                <li><a class="dropdown-item" href="/home/section.html">Esportes</a></li>
-                <li><a class="dropdown-item" href="/home/section.html">Bebês</a></li>
+                <li><a class="dropdown-item" href="/">Inicio</a></li>
+                <li><a class="dropdown-item" href="/produtos">Bonecas</a></li>
+                <li><a class="dropdown-item" href="/produtos">Carrinhos</a></li>
+                <li><a class="dropdown-item" href="/produtos">Colecionaveis</a></li>
+                <li><a class="dropdown-item" href="/produtos">Lego</a></li>
+                <li><a class="dropdown-item" href="/produtos">Esportes</a></li>
+                <li><a class="dropdown-item" href="/produtos">Bebês</a></li>
                 </ul>
             </div>
 
@@ -69,7 +69,7 @@
                     <button type="submit" class="btn btn-primary">Entrar</button>
                 </form>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/cadastro/index.html">Novo por aqui? Cadastre-se</a>
+                <a class="dropdown-item" href="/cadastro">Novo por aqui? Cadastre-se</a>
                 </div>
             </div>
 
@@ -99,16 +99,16 @@
         <span class="visually-hidden">Previous</span>
       </div>
 
-    @foreach($produtos as $produto)
+    @for($i = 0; $i < 3; $i++)
       <div class="card" style="width: 18rem;">
         <img src="/images/placeholder-9.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
-          <p class="card-text">Preço: R$ {{number_format($produto->PRODUTO_PRECO,2,",",".")}}</p>
-          <a href="#" class="btn btn-primary">Ver mais</a>
+          <h5 class="card-title">{{$produtos[$i]->PRODUTO_NOME}}</h5>
+          <p class="card-text">Preço: R$ {{number_format($produtos[$i]->PRODUTO_PRECO,2,",",".")}}</p>
+          <a href="/produto/{{$produtos[$i]->PRODUTO_ID}}" class="btn btn-primary">Ver mais</a>
         </div>
       </div>
-    @endforeach
+    @endfor
 
       <div class="arrow-content">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -154,16 +154,16 @@
       </div>
 
 
-      @foreach($produtos as $produto)
+      @for($i = 0; $i < 3; $i++)
         <div class="card" style="width: 18rem;">
             <img src="/images/placeholder-9.png" class="card-img-top" alt="...">
             <div class="card-body">
-            <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
-            <p class="card-text">Preço: R$ {{number_format($produto->PRODUTO_PRECO,2,",",".")}}</p>
-            <a href="#" class="btn btn-primary">Ver mais</a>
+            <h5 class="card-title">{{$produtos[$i]->PRODUTO_NOME}}</h5>
+            <p class="card-text">Preço: R$ {{number_format($produtos[$i]->PRODUTO_PRECO,2,",",".")}}</p>
+            <a href="/produto/{{$produtos[$i]->PRODUTO_ID}}" class="btn btn-primary">Ver mais</a>
             </div>
         </div>
-        @endforeach
+        @endfor
       <div class="arrow-content">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>

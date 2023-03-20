@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produto;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
@@ -35,8 +36,8 @@ class ProdutoController extends Controller
      * Display the specified resource.
      */
     public function show(Produto $produto){
-
-        return view('home.produto')->with('produto', $produto);
+        $produtos = Produto::all();
+        return view('home.produto',['produto'=>$produto, 'produtos'=>$produtos]);
     }
 
     /**
@@ -68,7 +69,9 @@ class ProdutoController extends Controller
     }
 
     public function produtos(){
-        return view('home.section')->with('produtos', Produto::all());
+        $categorias = Categoria::all();
+        $produtos = Produto::all();
+        return view('home.section',['produtos'=> $produtos, 'categorias' => $categorias]);
     }
 
 

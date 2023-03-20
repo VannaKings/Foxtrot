@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [ProdutoController::class, 'home']);
+Route::get('/', [ProdutoController::class, 'home']);
 
 Route::get('/produto/{produto}', [ProdutoController::class, 'show']);
 

@@ -25,7 +25,7 @@
     <div id="header">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="max-width: 55px;"><img src="/images/logo-abreviada.png" alt="" style="max-width: 100px; max-height: 50px;"></a>
+            <a class="navbar-brand" href="/" style="max-width: 55px;"><img src="/images/logo-abreviada.png" alt="" style="max-width: 100px; max-height: 50px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,13 +35,13 @@
                 <i class="fa-solid fa-bars"></i>Menu
                 </button>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="index.blade.php">Inicio</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Bonecas</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Carrinhos</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Colecionaveis</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Lego</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Esportes</a></li>
-                <li><a class="dropdown-item" href="section.blade.php">Bebês</a></li>
+                <li><a class="dropdown-item" href="/">Inicio</a></li>
+                <li><a class="dropdown-item" href="/produtos">Bonecas</a></li>
+                <li><a class="dropdown-item" href="/produtos">Carrinhos</a></li>
+                <li><a class="dropdown-item" href="/produtos">Colecionaveis</a></li>
+                <li><a class="dropdown-item" href="/produtos">Lego</a></li>
+                <li><a class="dropdown-item" href="/produtos">Esportes</a></li>
+                <li><a class="dropdown-item" href="/produtos">Bebês</a></li>
                 </ul>
             </div>
 
@@ -105,7 +105,7 @@
                         <p>De: <strong class='preco-antigo'>R$ <s>{{$produto->PRODUTO_PRECO}}</s></strong></p>
                         <p class='preco-destaque'>R$ {{$produto->Preco()}} </p>
                         <p class='informacoes-texto'>Categoria: {{$produto->getCategoria()}}</p>
-                        <p class='informacoes-texto'><i class='fa-solid fa-box' style='margin-right:10px;'></i>Estoque: 1</p>
+                        <p class='informacoes-texto'><i class='fa-solid fa-box' style='margin-right:10px;'></i>Estoque: {{$produto->getEstoque()}}</p>
                         <div class="adicionar">
                             <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
                             <input type="tel">
@@ -123,7 +123,11 @@
         <p>{{$produto->PRODUTO_DESC}}</p>
 
     </section>
-
+    <!-- @foreach($produtos as $produtoo)
+        @if($produtoo->CATEGORIA_ID === $produto->CATEGORIA_ID)
+            <h1>{{$produtoo->PRODUTO_NOME}}</h1>
+        @endif
+    @endforeach -->
     <section class="sugestoes">
 
         <h2>Você também pode gostar</h2>
@@ -134,7 +138,6 @@
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
             </div>
-
 
             <div class="card" style="width: 18rem;">
             <img src="/images/placeholder-9.png" class="card-img-top" alt="...">
