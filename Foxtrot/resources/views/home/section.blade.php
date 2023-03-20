@@ -101,14 +101,14 @@
                   </div>
                   <p>Categorias</p>
                   <div class="filter-box">
-                  <!-- @foreach($categorias as $categoria)
+                @foreach($categorias as $categoria)
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                       <label class="form-check-label" for="flexCheckDefault">
                         {{$categoria->CATEGORIA_NOME}}
                       </label>
                     </div>
-                    @endforeach -->
+                @endforeach
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                       <label class="form-check-label" for="flexCheckDefault">
@@ -198,7 +198,7 @@
                   <img src="/images/placeholder-9.png" class="card-img-top" alt=".">
                   <div class="card-body">
                     <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
-                    <p class="card-text">Preço: R$ {{$produto->Preco()}}</p>
+                    <p class="card-text">Preço: R$ {{$produto->getPrecoDesconto()}}</p>
                     <div class="buttons">
                       <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-secondary"><i class="fa-solid fa-magnifying-glass"></i>Ver mais</a>
                       <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Adicionar</a>

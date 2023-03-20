@@ -18,7 +18,7 @@ class Produto extends Model
 
     // protected $foreignKey = "CATEGORIA_ID";
 
-    public function Preco(){
+    public function getPrecoDesconto(){
         return number_format(($this->PRODUTO_PRECO - $this->PRODUTO_DESCONTO), 2, ',', '.');
     }
 
