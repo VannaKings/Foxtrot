@@ -15,7 +15,7 @@
     <img src="/images/logo.png" alt="logo" class="logo" style="max-width: 400px; margin-bottom: 20px;">
     <div class="container">
         <h1>Cadastre-se</h1>
-        <form class="row g-3" method = "POST" action = "{{route('home.index')}}">
+        <form class="row g-3" method = "POST" action = "{{route('registrar')}}">
            @csrf
             <div class="col-md-6">
                 <label for="inputName" class="form-label">Nome</label>
@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-6">
                 <label for="inputName" class="form-label">Sobrenome</label>
-                <input type="text" class="form-control" id="inputSobrenome">
+                <input type="text" class="form-control" id="inputSobrenome" name='USUARIO_SOBRENOME'>
               </div>
             <div class="col-md-6">
               <label for="inputEmail4" class="form-label">Email</label>
@@ -33,9 +33,13 @@
               <label for="inputPassword4" class="form-label">Senha</label>
               <input type="password" class="form-control" id="inputPassword4" name = 'USUARIO_SENHA'>
             </div>
+            <div class="col-md-6">
+              <label for="inputCPF4" class="form-label">CPF</label>
+              <input type="number" class="form-control" id="inputCPF4" name = 'USUARIO_CPF'>
+            </div>
             <div class="col-12">
               <label for="inputAddress" class="form-label">Endereço</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="">
+              <input type="text" class="form-control" id="inputAddress" placeholder="" name = 'USUARIO_CPF'>
             </div>
             <div class="col-4">
                 <label for="inputZip" class="form-label">CEP</label>
