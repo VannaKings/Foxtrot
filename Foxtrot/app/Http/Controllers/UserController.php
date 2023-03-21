@@ -29,12 +29,12 @@ class UserController extends Controller
     }
 
     public function store(Request $request){
-        User::create($request->only([
+        User::create([
             "USUARIO_NOME" => $request->USUARIO_NOME,
             "USUARIO_EMAIL" => $request->USUARIO_EMAIL,
             "USUARIO_SENHA" => $request->USUARIO_SENHA,
-            "USUARIO_CPF" => $request->USUARIO_CPF
-        ]));
+            "USUARIO_CPF" => $request->USUARIO_CPF,
+        ]);
 
         return redirect()->route('home.index');
     }

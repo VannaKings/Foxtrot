@@ -19,7 +19,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [ProdutoController::class, 'home'])->name('home.index');
 Route::get('/cadastro', [UserController::class, 'create']);
-Route::post('/', [UserController::class, 'store']);
+Route::post('/', [UserController::class, 'store'])->name('registrar');
 
 
 Route::get('/produto/{produto}', [ProdutoController::class, 'show']);

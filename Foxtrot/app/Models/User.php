@@ -21,4 +21,6 @@ class User extends Authenticatable
         "USUARIO_SENHA",
         "USUARIO_CPF"
     ];
+
+    public $timestamps = false;
 }
