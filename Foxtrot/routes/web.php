@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,14 @@ use App\Http\Controllers\ProdutoController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-Route::get('/', [ProdutoController::class, 'home']);
+Route::get('/', [ProdutoController::class, 'home'])->name('home.index');
+Route::get('/cadastro', [UserController::class, 'create']);
+Route::post('/', [UserController::class, 'store']);
+
 
 Route::get('/produto/{produto}', [ProdutoController::class, 'show']);
 
 Route::get('/produtos', [ProdutoController::class, 'produtos']);
+
+Route::get('/cadastro', [UserController::class, 'index']);

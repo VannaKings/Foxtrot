@@ -17,17 +17,20 @@ class Produto extends Model
     protected $primaryKey = "PRODUTO_ID";
 
     // protected $foreignKey = "CATEGORIA_ID";
+    public function ProdutoImagem(){
+        return $this->hasMany(ProdutoImagem::class,'PRODUTO_ID', 'PRODUTO_ID');
+    }
 
     public function getPrecoDesconto(){
         return number_format(($this->PRODUTO_PRECO - $this->PRODUTO_DESCONTO), 2, ',', '.');
     }
 
-    public function categoria() : BelongsTo{
+    public function Categoria(){
         return $this->belongsTo(Categoria::class, 'CATEGORIA_ID', 'CATEGORIA_ID');
     }
 
-    public function estoque() : HasOne{
-        return $this->hasOne(Estoque::class, 'PRODUTO_ID', 'PRODUTO_ID');
+    public function ProdutoEstoque(){
+        return $this->belongsTo(Estoque::class, 'PRODUTO_ID', 'PRODUTO_ID');
     }
 
     public function getCategoria(){

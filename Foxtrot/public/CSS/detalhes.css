@@ -24,7 +24,7 @@ h2
 {
     width: 500px;
     margin-left: 20px;
-    
+
     border: 2px solid var(--cinza);
 }
 
@@ -72,7 +72,9 @@ h2
 {
     text-decoration: line-through;
 }
-
+#preco-antigo{
+    margin-bottom: 0!important;
+}
 .informacoes-texto
 {
     font-size: 18px;

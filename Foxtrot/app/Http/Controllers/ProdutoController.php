@@ -36,8 +36,9 @@ class ProdutoController extends Controller
      * Display the specified resource.
      */
     public function show(Produto $produto){
+        $maisProdutos = Categoria::find($produto->CATEGORIA_ID)->Produtos;
         $produtos = Produto::all();
-        return view('home.produto',['produto'=>$produto, 'produtos'=>$produtos]);
+        return view('home.produto',['produto'=>$produto, 'produtos'=>$produtos, 'maisProdutos'=> $maisProdutos]);
     }
 
     /**

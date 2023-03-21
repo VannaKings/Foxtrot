@@ -15,7 +15,7 @@ class Categoria extends Model
 
     protected $primaryKey = "CATEGORIA_ID";
 
-    public function produtos(): HasMany{
+    public function Produtos(){
         return $this->hasMany(Produto::class, 'CATEGORIA_ID', 'CATEGORIA_ID');
     }
 }

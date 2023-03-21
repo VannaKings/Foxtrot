@@ -70,7 +70,7 @@
                     <button type="submit" class="btn btn-primary">Entrar</button>
                 </form>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/cadastro/index.html">Novo por aqui? Cadastre-se</a>
+                <a class="dropdown-item" href="/cadastro">Novo por aqui? Cadastre-se</a>
                 </div>
             </div>
 
@@ -102,9 +102,9 @@
                     <div class="informacoes">
                         <h2>{{$produto->PRODUTO_NOME}}</h2>
 
-                        <p>De: <strong class='preco-antigo'>R$ <s>{{$produto->PRODUTO_PRECO}}</s></strong></p>
+                        <p id='preco-antigo'>De: <strong class='preco-antigo'>R$ <s>{{$produto->PRODUTO_PRECO}}</s></strong></p>
                         <p class='preco-destaque'>R$ {{$produto->getPrecoDesconto()}} </p>
-                        <p class='informacoes-texto'>Categoria: {{$produto->getCategoria()}}</p>
+                        <p class='informacoes-texto'>Categoria: {{$produto->Categoria->CATEGORIA_NOME}}</p>
                         <p class='informacoes-texto'><i class='fa-solid fa-box' style='margin-right:10px;'></i>Estoque: {{$produto->getEstoque()}}</p>
                         <div class="adicionar">
                             <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
@@ -135,8 +135,8 @@
             <span class="visually-hidden">Previous</span>
             </div>
 
-            @foreach($produtos as $produtoo)
-                @if($produtoo->CATEGORIA_ID === $produto->CATEGORIA_ID && $produtoo->PRODUTO_ID !== $produto->PRODUTO_ID)
+            @foreach($maisProdutos as $produtoo)
+                @if($produtoo->PRODUTO_ID !== $produto->PRODUTO_ID)
                 <div class="card" style="width: 18rem;">
                     <img src="/images/placeholder-9.png" class="card-img-top" alt="...">
                     <div class="card-body">
