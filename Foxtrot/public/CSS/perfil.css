@@ -13,19 +13,20 @@
     --vermelho: #ff5052;
 }
 
+.menu{
+
+}
 
 .nav-vertical
 {
     display: flex;
     flex-direction: column;
     list-style: none;
-    width: 100%;
     padding-left: 0!important;
 }
 
 .nav-vertical li
 {
-    width: 100%;
     cursor: pointer;
 }
 
@@ -37,7 +38,7 @@
 
 .nav-vertical i
 {
-    margin: 10px 20px 10px 40px;
+    margin: 10px 20px 10px 55px;
 }
 
 .nav-vertical a
@@ -50,20 +51,5 @@
 .nav-vertical a:hover, .nav-vertical i:hover
 {
     color: white;
-    text-decoration: none;
-}
-
-.menu h1
-{
-    color: var(--preto);
-    font-weight: bold;
-    font-size: 16px;
-    margin: 20px 0;
-    width: 155px;
-}
-.navegador a
-{
-    font-size: 16px;
-    color: var(--preto);
     text-decoration: none;
 }

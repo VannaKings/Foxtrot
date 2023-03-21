@@ -34,13 +34,13 @@
                 <i class="fa-solid fa-bars"></i>Menu
                 </button>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/">Inicio</a></li>
-                <li><a class="dropdown-item" href="/produtos">Bonecas</a></li>
-                <li><a class="dropdown-item" href="/produtos">Carrinhos</a></li>
-                <li><a class="dropdown-item" href="/produtos">Colecionaveis</a></li>
-                <li><a class="dropdown-item" href="/produtos">Lego</a></li>
-                <li><a class="dropdown-item" href="/produtos">Esportes</a></li>
-                <li><a class="dropdown-item" href="/produtos">Bebês</a></li>
+                    <li><a class="dropdown-item" href="/">Inicio</a></li>
+                    <li><a class="dropdown-item" href="/produtos">Bonecas</a></li>
+                    <li><a class="dropdown-item" href="/produtos">Carrinhos</a></li>
+                    <li><a class="dropdown-item" href="/produtos">Colecionaveis</a></li>
+                    <li><a class="dropdown-item" href="/produtos">Lego</a></li>
+                    <li><a class="dropdown-item" href="/produtos">Esportes</a></li>
+                    <li><a class="dropdown-item" href="/produtos">Bebês</a></li>
                 </ul>
             </div>
 
