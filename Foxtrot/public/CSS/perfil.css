@@ -1,0 +1,69 @@
+/* Seção Detalhes(produto)  */
+:root
+{
+    --cinza: #ccc;
+    --preto: #1b0c22;
+    --laranja: #ff5e3d;
+    --azul: #2487ee;
+    --cinzaEscuro: #535562;
+    --roxo: #7632d5;
+    --azulEsverdeado: #0BCBB0;
+    --verde: #17ae27;
+    --amarelo: #f0dc1b;
+    --vermelho: #ff5052;
+}
+
+
+.nav-vertical
+{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    padding-left: 0!important;
+}
+
+.nav-vertical li
+{
+    width: 100%;
+    cursor: pointer;
+}
+
+.nav-vertical li:hover, .nav-vertical li:hover a, .nav-vertical li:hover i
+{
+    background-color: var(--laranja);
+    color: white!important;
+}
+
+.nav-vertical i
+{
+    margin: 10px 20px 10px 40px;
+}
+
+.nav-vertical a
+{
+    margin: 6px 0 ;
+    text-decoration: none;
+    color: var(--preto);
+}
+
+.nav-vertical a:hover, .nav-vertical i:hover
+{
+    color: white;
+    text-decoration: none;
+}
+
+.menu h1
+{
+    color: var(--preto);
+    font-weight: bold;
+    font-size: 16px;
+    margin: 20px 0;
+    width: 155px;
+}
+.navegador a
+{
+    font-size: 16px;
+    color: var(--preto);
+    text-decoration: none;
+}

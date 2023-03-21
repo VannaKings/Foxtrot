@@ -38,4 +38,8 @@ class UserController extends Controller
 
         return redirect()->route('home.index');
     }
+
+    public function perfil(){
+        return view('home.perfil');
+    }
 }

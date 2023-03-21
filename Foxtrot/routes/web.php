@@ -27,3 +27,5 @@ Route::get('/produto/{produto}', [ProdutoController::class, 'show']);
 Route::get('/produtos', [ProdutoController::class, 'produtos']);
 
 Route::get('/cadastro', [UserController::class, 'index']);
+
+Route::get('/perfil', [UserController::class, 'perfil']);

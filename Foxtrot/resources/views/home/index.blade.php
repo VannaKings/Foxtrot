@@ -19,7 +19,7 @@
 
     <!--Icones font awesome-->
     <script src="https://kit.fontawesome.com/0169495cc4.js" crossorigin="anonymous"></script>
-  </head>
+</head>
 <body>
     <div id="header">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
