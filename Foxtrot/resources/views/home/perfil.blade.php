@@ -84,13 +84,14 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-md-4">
-                <h3>Olá, Fulano</h3>
+            <div class="col-md-3 menu">
+                <h3 style="text-align:center;">Olá, Fulano</h3>
                 <!-- Nav seções -->
                 <ul class="nav-vertical">
-                    <li><i class="fa-solid fa-user" style="color:#1195d3;"></i><a class="filtro" href= "">Dados pessoais</a></li>
-                    <li><i class="fa-solid fa-gift"></i><a class="filtro" href= "">Pedidos</a></li>
-                    <li><i class="fa-solid fa-location-dot"></i><a class="filtro" href= "">Endereços</a><li>
+                    <li><i class="fa-solid fa-user"></i><a class="filtro" href= "">Dados pessoais</a></li>
+                    <li><i class="fa-solid fa-gift"></i><a class="filtro"  href= "">Pedidos</a></li>
+                    <li><i class="fa-solid fa-cart-shopping" style="font-size:15px"></i><a class="filtro" href= "">Carrinho</a></li>
+                    <li><i class="fa-solid fa-location-dot"></i><a class="filtro" href= "">Endereços</a></li>
                 </ul>
                 <!-- <div class="mt-4">
                     <h4 class="mb-4">Endereços Cadastrados</h4>
@@ -101,7 +102,7 @@
                     <a href="#" class="btn btn-primary mt-3">Cadastrar Novo Endereço</a>
                 </div> -->
             </div>
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <h4 class="mb-4">Histórico de Pedidos</h4>
                 <table class="table">
                     <thead>
