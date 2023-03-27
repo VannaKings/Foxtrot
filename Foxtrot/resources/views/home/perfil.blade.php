@@ -94,67 +94,8 @@
         </nav>
     </div>
 
-    <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark"> -->
-        <!-- Logo -->
-        <!-- <a class="navbar-brand" href="#">Minha Loja</a> -->
-        <!-- Links -->
-        <!-- <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Perfil</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Histórico de Pedidos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Endereço</a>
-        </li>
-        </ul>
-    </nav> -->
     <div class="espaco"></div>
     <div class="container">
-        <!-- <h2>Perfil do Usuário</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Informações Pessoais</h3>
-                <p>Nome: João Silva</p>
-                <p>E-mail: joaosilva@gmail.com</p>
-                <p>Telefone: (11) 99999-9999</p>
-            </div>
-            <div class="col-md-6">
-                <h3>Endereço</h3>
-                <p>Rua A, 123</p>
-                <p>Bairro: Centro</p>
-                <p>Cidade: São Paulo</p>
-                <p>CEP: 01234-567</p>
-            </div>
-        </div>
-        <hr> -->
-        <div class="row">
-            <div class="col-md-4">
-                <h3>Informações Pessoais</h3>
-                <p><strong>Nome:</strong> João Silva</p>
-                <p><strong>E-mail:</strong> joaosilva@gmail.com</p>
-                <p><strong>Telefone:</strong> (11) 99999-9999</p>
-                <p><strong>CPF:</strong> 123.456.789-00</p>
-                <p><strong>Data de Nascimento:</strong> 01/01/1980</p>
-            </div>
-            <div class="col-md-4">
-                <h3>Endereço de Entrega</h3>
-                <p><strong>Rua:</strong> A, 123</p>
-                <p><strong>Bairro:</strong> Centro</p>
-                <p><strong>Cidade:</strong> São Paulo</p>
-                <p><strong>CEP:</strong> 01234-567</p>
-                <p><strong>País:</strong> Brasil</p>
-            </div>
-            <div class="col-md-4">
-                <h3>Endereço de Cobrança</h3>
-                <p><strong>Rua:</strong> B, 456</p>
-                <p><strong>Bairro:</strong> Centro</p>
-                <p><strong>Cidade:</strong> São Paulo</p>
-                <p><strong>CEP:</strong> 01234-567</p>
-                <p><strong>País:</strong> Brasil</p>
-            </div>
-        </div>
 
         <h3>Histórico de Pedidos</h3>
         <table class="table table-striped table-hover">
