@@ -22,7 +22,7 @@
     <script src="https://kit.fontawesome.com/0169495cc4.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="header">
+    <div id="header">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
             <a class="navbar-brand" href="/" style="max-width: 55px;"><img src="/images/logo-abreviada.png" alt="" style="max-width: 100px; max-height: 50px;"></a>
@@ -35,13 +35,13 @@
                 <i class="fa-solid fa-bars"></i>Menu
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/">Inicio</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Bonecas</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Carrinhos</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Colecionaveis</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Lego</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Esportes</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Bebês</a></li>
+                <li><a class="dropdown-item" href="/">Inicio</a></li>
+                <li><a class="dropdown-item" href="/produtos">Bonecas</a></li>
+                <li><a class="dropdown-item" href="/produtos">Carrinhos</a></li>
+                <li><a class="dropdown-item" href="/produtos">Colecionaveis</a></li>
+                <li><a class="dropdown-item" href="/produtos">Lego</a></li>
+                <li><a class="dropdown-item" href="/produtos">Esportes</a></li>
+                <li><a class="dropdown-item" href="/produtos">Bebês</a></li>
                 </ul>
             </div>
 
@@ -52,24 +52,39 @@
 
             <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown botao" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                <i class="fa-solid fa-user"></i>Olá, fulano
+                </button>
+
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/">Perfil</a></li>
+                <li><a class="dropdown-item" href="/produtos">Pedidos</a></li>
+                <li><a class="dropdown-item" href="/produtos">Carrinho</a></li>
+                </ul>
+            </div>
+
+            <!-- <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown botao" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                 <i class="fa-solid fa-user"></i>Olá! entre ou cadastre-se
                 </button>
                 <div class="dropdown-menu">
                 <form class=" px-3 py-3">
                     <div class="mb-3">
-                        <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+                    <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                    <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                    </div>
+                    <div class="mb-3">
+
                     </div>
                     <button type="submit" class="btn btn-primary">Entrar</button>
                 </form>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/cadastro/index.html">Novo por aqui? Cadastre-se</a>
+                <a class="dropdown-item" href="/cadastro">Novo por aqui? Cadastre-se</a>
                 </div>
-            </div>
+            </div> -->
 
             <div class="carrinho">
                 <i class="fa-solid fa-cart-shopping"></i>
@@ -80,56 +95,35 @@
     </div>
 
     <div class="espaco"></div>
-
     <div class="container">
 
-        <div class="row">
-            <div class="col-md-3 menu">
-                <h3 style="text-align:center;">Olá, Fulano</h3>
-                <!-- Nav seções -->
-                <ul class="nav-vertical">
-                    <li><i class="fa-solid fa-user"></i><a class="filtro" href= "">Dados pessoais</a></li>
-                    <li><i class="fa-solid fa-gift"></i><a class="filtro"  href= "">Pedidos</a></li>
-                    <li><i class="fa-solid fa-cart-shopping" style="font-size:15px"></i><a class="filtro" href= "">Carrinho</a></li>
-                    <li><i class="fa-solid fa-location-dot"></i><a class="filtro" href= "">Endereços</a></li>
-                </ul>
-                <!-- <div class="mt-4">
-                    <h4 class="mb-4">Endereços Cadastrados</h4>
-                    <ul class="list-group">
-                    <li class="list-group-item">Rua A, Número B, Bairro C</li>
-                    <li class="list-group-item">Rua D, Número E, Bairro F</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary mt-3">Cadastrar Novo Endereço</a>
-                </div> -->
-            </div>
-            <div class="col-md-9">
-                <h4 class="mb-4">Histórico de Pedidos</h4>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>ID do Pedido</th>
-                        <th>Data do Pedido</th>
-                        <th>Status do Pedido</th>
-                        <th>Valor Total</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td>01/01/2022</td>
-                        <td>Pago</td>
-                        <td>R$ 100,00</td>
-                    </tr>
-                    <tr>
-                        <td>002</td>
-                        <td>02/02/2022</td>
-                        <td>Enviado</td>
-                        <td>R$ 50,00</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <h3>Histórico de Pedidos</h3>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID do Pedido</th>
+                    <th>Data</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>01/01/2023</td>
+                    <td>R$ 100,00</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>02/01/2023</td>
+                    <td>R$ 200,00</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>03/01/2023</td>
+                    <td>R$ 300,00</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
