@@ -95,36 +95,168 @@
     </div>
 
     <div class="espaco"></div>
+
     <div class="container">
 
-        <h3>Histórico de Pedidos</h3>
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>ID do Pedido</th>
-                    <th>Data</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>001</td>
-                    <td>01/01/2023</td>
-                    <td>R$ 100,00</td>
-                </tr>
-                <tr>
-                    <td>002</td>
-                    <td>02/01/2023</td>
-                    <td>R$ 200,00</td>
-                </tr>
-                <tr>
-                    <td>003</td>
-                    <td>03/01/2023</td>
-                    <td>R$ 300,00</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <div class="container my-5">
+            <h1 class="mb-3">Perfil</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Nome Completo:</strong> John Doe</li>
+                        <li class="list-group-item"><strong>E-mail:</strong> john.doe@example.com</li>
+                        <li class="list-group-item"><strong>CPF:</strong> xxx.xxx.xxx-xx</li>
+                        <li class="list-group-item"><strong>Telefone:</strong> (xx) xxxx-xxxx</li>
+                    </ul>
+                    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#editarInfoModal">Editar Informações</button>
+                </div>
+                <div class="row">
+                    <img src="../../../public/images/img-perfil.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para editar informações -->
+        <div class="modal fade" id="editarInfoModal" tabindex="-1" aria-labelledby="editarInfoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editarInfoModalLabel">Editar Informações Pessoais</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome Completo:</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Seu nome completo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Seu melhor e-mail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">Telefone:</label>
+                            <input type="tel" class="form-control" id="telefone" placeholder="(xx) xxxx-xxxx">
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Salvar Mudanças</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <h3 class="mb-3">Meus Endereços</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item col">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5>Endereço Principal</h5>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </div>
+                        <div class="mt-2">
+                            <p><strong>Nome:</strong> John Doe</p>
+                            <p><strong>CEP:</strong> 12345-678</p>
+                            <p><strong>Rua:</strong> Rua da Exemplo, 123</p>
+                            <p><strong>Cidade:</strong> São Paulo</p>
+                            <p><strong>Estado:</strong> SP</p>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item col">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5>Outro Endereço</h5>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </div>
+                        <div class="mt-2">
+                            <p><strong>Nome:</strong> John Doe</p>
+                            <p><strong>CEP:</strong> 12345-678</p>
+                            <p><strong>Rua:</strong> Rua da Exemplo, 123</p>
+                            <p><strong>Cidade:</strong> São Paulo</p>
+                            <p><strong>Estado:</strong> SP</p>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button type="button" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-plus"></i> Novo Endereço</button>
+        </div>
+
+        <!-- Modal para editar/adicionar endereço -->
+        <div class="modal fade" id="enderecoModal" tabindex="-1" aria-labelledby="enderecoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="enderecoModalLabel">Adicionar/Editar Endereço</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="cep" class="form-label">CEP:</label>
+                                <input type="text" class="form-control" id="cep" placeholder="Seu CEP">
+                            </div>
+                            <div class="mb-3">
+                                <label for="rua" class="form-label">Rua:</label>
+                                <input type="text" class="form-control" id="rua" placeholder="Sua rua">
+                            </div>
+                            <div class="mb-3">
+                                <label for="numero" class="form-label">Número:</label>
+                                <input type="text" class="form-control" id="numero" placeholder="Seu número">
+                            </div>
+                            <div class="mb-3">
+                                <label for="complemento" class="form-label">Complemento:</label>
+                                <input type="text" class="form-control" id="complemento" placeholder="Seu complemento (opcional)">
+                            </div>
+                            <div class="mb-3">
+                                <label for="bairro" class="form-label">Bairro:</label>
+                                <input type="text" class="form-control" id="bairro" placeholder="Seu bairro">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cidade" class="form-label">Cidade:</label>
+                                <input type="text" class="form-control" id="cidade" placeholder="Sua cidade">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Salvar Mudanças</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="container my-5">
+                <div class="col-md-6">
+                    <h2>Endereços</h2>
+                    <ul class="list-group mb-3">
+                    <li class="list-group-item">
+                        <p><strong>Endereço de Cobrança:</strong></p>
+                        <p>Nome da Rua, 123</p>
+                        <p>Bairro, Cidade - UF</p>
+                        <p>CEP: 12345-678</p>
+                        <button type="button" class="btn btn-link">Editar</button>
+                    </li>
+                    <li class="list-group-item">
+                        <p><strong>Endereço de Entrega:</strong></p>
+                        <p>Nome da Rua, 123</p>
+                        <p>Bairro, Cidade - UF</p>
+                        <p>CEP: 12345-678</p>
+                        <button type="button" class="btn btn-link">Editar</button>
+                    </li>
+                    </ul>
+                    <button type="button" class="btn btn-primary">Adicionar Novo Endereço</button>
+                </div>
+            </div>
+        </div> -->
+
 </body>
 </html>
 
