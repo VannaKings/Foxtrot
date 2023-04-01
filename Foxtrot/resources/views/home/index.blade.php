@@ -41,16 +41,16 @@
         <span class="visually-hidden">Previous</span>
       </div>
 
-    @for($i = 0; $i < 3; $i++)
+    @foreach($produtos->reverse()->take(3) as $produto)
       <div class="card" style="width: 18rem;">
         <img src="/images/placeholder-9.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{$produtos[$i]->PRODUTO_NOME}}</h5>
-          <p class="card-text">Preço: R$ {{number_format($produtos[$i]->PRODUTO_PRECO,2,",",".")}}</p>
-          <a href="/produto/{{$produtos[$i]->PRODUTO_ID}}" class="btn btn-primary">Ver mais</a>
+          <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
+          <p class="card-text">Preço: R$ {{number_format($produto->PRODUTO_PRECO,2,",",".")}}</p>
+          <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-primary">Ver mais</a>
         </div>
       </div>
-    @endfor
+    @endforeach
 
       <div class="arrow-content">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -96,16 +96,16 @@
       </div>
 
 
-      @for($i = 0; $i < 3; $i++)
+      @foreach($produtos->take(3) as $produto)
         <div class="card" style="width: 18rem;">
             <img src="/images/placeholder-9.png" class="card-img-top" alt="...">
             <div class="card-body">
-            <h5 class="card-title">{{$produtos[$i]->PRODUTO_NOME}}</h5>
-            <p class="card-text">Preço: R$ {{number_format($produtos[$i]->PRODUTO_PRECO,2,",",".")}}</p>
-            <a href="/produto/{{$produtos[$i]->PRODUTO_ID}}" class="btn btn-primary">Ver mais</a>
+            <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
+            <p class="card-text">Preço: R$ {{number_format($produto->PRODUTO_PRECO,2,",",".")}}</p>
+            <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-primary">Ver mais</a>
             </div>
         </div>
-        @endfor
+        @endforeach
       <div class="arrow-content">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>

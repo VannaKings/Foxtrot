@@ -39,7 +39,7 @@
             </div>
             <div class="col-12">
               <label for="inputAddress" class="form-label">Endereço</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="" name = 'USUARIO_CPF'>
+              <input type="text" class="form-control" id="inputAddress" placeholder="">
             </div>
             <div class="col-4">
                 <label for="inputZip" class="form-label">CEP</label>
