@@ -56,9 +56,9 @@
                 </button>
 
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/">Perfil</a></li>
-                <li><a class="dropdown-item" href="/produtos">Pedidos</a></li>
-                <li><a class="dropdown-item" href="/produtos">Carrinho</a></li>
+                <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
+                <li><a class="dropdown-item" href="/pedidos">Pedidos</a></li>
+                <li><a class="dropdown-item" href="/carrinho">Carrinho</a></li>
                 </ul>
             </div>
 
@@ -99,19 +99,27 @@
     <div class="container">
 
         <div class="container my-5">
-            <h1 class="mb-3">Perfil</h1>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Nome Completo:</strong> John Doe</li>
-                        <li class="list-group-item"><strong>E-mail:</strong> john.doe@example.com</li>
-                        <li class="list-group-item"><strong>CPF:</strong> xxx.xxx.xxx-xx</li>
-                        <li class="list-group-item"><strong>Telefone:</strong> (xx) xxxx-xxxx</li>
-                    </ul>
-                    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#editarInfoModal">Editar Informações</button>
-                </div>
-                <div class="row">
-                    <img src="../../../public/images/img-perfil.png" alt="">
+            <div class="area-titulo titulo">
+                <h1 class="mb-3 titulo">Perfil</h1>
+            </div>
+
+            <div class="area-perfil">
+                <div class="row" style="display:flex;justify-content:center">
+
+                    <div class="col-md-4 div-image">
+                        <img src="/images/img-perfil.png" alt="">
+                    </div>
+
+                    <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>Nome Completo:</strong> John Doe</li>
+                            <li class="list-group-item"><strong>E-mail:</strong> john.doe@example.com</li>
+                            <li class="list-group-item"><strong>CPF:</strong> xxx.xxx.xxx-xx</li>
+                            <li class="list-group-item"><strong>Telefone:</strong> (xx) xxxx-xxxx</li>
+                        </ul>
+                        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#editarInfoModal">Editar Informações</button>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -149,44 +157,49 @@
         </div>
 
         <div class="container my-5">
-            <h3 class="mb-3">Meus Endereços</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item col">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h5>Endereço Principal</h5>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
-                        </div>
-                        <div class="mt-2">
-                            <p><strong>Nome:</strong> John Doe</p>
-                            <p><strong>CEP:</strong> 12345-678</p>
-                            <p><strong>Rua:</strong> Rua da Exemplo, 123</p>
-                            <p><strong>Cidade:</strong> São Paulo</p>
-                            <p><strong>Estado:</strong> SP</p>
-                        </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item col">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h5>Outro Endereço</h5>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
-                        </div>
-                        <div class="mt-2">
-                            <p><strong>Nome:</strong> John Doe</p>
-                            <p><strong>CEP:</strong> 12345-678</p>
-                            <p><strong>Rua:</strong> Rua da Exemplo, 123</p>
-                            <p><strong>Cidade:</strong> São Paulo</p>
-                            <p><strong>Estado:</strong> SP</p>
-                        </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="area-titulo-endereco">
+                <h3 class="mb-3 titulo">Meus Endereços</h3>
             </div>
-            <button type="button" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-plus"></i> Novo Endereço</button>
+
+            <div class="area-endereco">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item col">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5>Endereço Principal</h5>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                            </div>
+                            <div class="mt-2">
+                                <p><strong>Nome:</strong> John Doe</p>
+                                <p><strong>CEP:</strong> 12345-678</p>
+                                <p><strong>Rua:</strong> Rua da Exemplo, 123</p>
+                                <p><strong>Cidade:</strong> São Paulo</p>
+                                <p><strong>Estado:</strong> SP</p>
+                            </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item col">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5>Outro Endereço</h5>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                            </div>
+                            <div class="mt-2">
+                                <p><strong>Nome:</strong> John Doe</p>
+                                <p><strong>CEP:</strong> 12345-678</p>
+                                <p><strong>Rua:</strong> Rua da Exemplo, 123</p>
+                                <p><strong>Cidade:</strong> São Paulo</p>
+                                <p><strong>Estado:</strong> SP</p>
+                            </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-plus"></i> Novo Endereço</button>
+            </div>
         </div>
 
         <!-- Modal para editar/adicionar endereço -->

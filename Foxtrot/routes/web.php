@@ -42,3 +42,7 @@ Route::get('/produtos', [ProdutoController::class, 'produtos']);
 Route::get('/cadastro', [UserController::class, 'index']);
 
 Route::get('/perfil', [UserController::class, 'perfil']);
+
+Route::get('/pedidos', [UserController::class, 'pedidos']);
+
+Route::get('/carrinho', [UserController::class, 'carrinho']);

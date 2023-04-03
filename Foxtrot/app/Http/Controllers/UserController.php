@@ -42,4 +42,12 @@ class UserController extends Controller
     public function perfil(){
         return view('home.perfil');
     }
+
+    public function pedidos(){
+        return view('home.pedidos');
+    }
+
+    public function carrinho(){
+        return view('home.carrinho');
+    }
 }

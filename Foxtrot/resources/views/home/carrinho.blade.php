@@ -58,7 +58,7 @@
                 <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
                 <li><a class="dropdown-item" href="/pedidos">Pedidos</a></li>
-                <li><a class="dropdown-item" href="/carrinho">Carrinho</a></li>
+                <li><a class="dropdown-item" href="/">Carrinho</a></li>
                 </ul>
             </div>
 
@@ -96,41 +96,47 @@
 
     <div class="espaco"></div>
 
-    <div class="container">
-        <div class="area-titulo">
-            <h3 class="titulo">Histórico de Pedidos</h3>
+    <section class="carrinho">
+        <div class="container">
+            <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mb-4">Carrinho de Compras</h2>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                <div class="card-body">
+                    <!-- Aqui serão exibidos os itens adicionados ao carrinho -->
+                    <div class="carrinho-item row mb-3">
+                        <!-- <div class="col-3">
+                            <img src="/images/placeholder-9.png" alt="Nome do Produto" class="img-fluid">
+                        </div> -->
+                        <div class="col-9">
+                            <h5 class="mb-1">Nome do Produto</h5>
+                            <p class="mb-1">Preço: R$ 99,99</p>
+                            <p class="mb-1">Quantidade: 1</p>
+                            <p class="mb-0">Preço Total: R$ 99,99</p>
+                        </div>
+                        <div class="col-12">
+                            <a href="#" class="btn btn-danger btn-sm float-end">Remover</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="mb-3">Resumo do Pedido</h5>
+                    <p class="mb-1">Subtotal: R$ 99,99</p>
+                    <p class="mb-1">Frete: R$ 10,00</p>
+                    <h5>Total: R$ 109,99</h5>
+                    <a href="#" class="btn btn-primary btn-lg w-100 mt-3">Finalizar Compra</a>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
+    </section>
 
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>ID do Pedido</th>
-                    <th>Data</th>
-                    <th>Total</th>
-                    <th>Comprar novamente</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>001</td>
-                    <td>01/01/2023</td>
-                    <td>R$ 100,00</td>
-                    <td><button class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></button></td>
-                </tr>
-                <tr>
-                    <td>002</td>
-                    <td>02/01/2023</td>
-                    <td>R$ 200,00</td>
-                    <td><button class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></button></td>
-                </tr>
-                <tr>
-                    <td>003</td>
-                    <td>03/01/2023</td>
-                    <td>R$ 300,00</td>
-                    <td><button class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 </body>
 </html>
