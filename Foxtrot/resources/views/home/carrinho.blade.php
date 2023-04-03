@@ -99,41 +99,41 @@
     <section class="carrinho">
         <div class="container">
             <div class="row">
-            <div class="col-12">
-                <h2 class="text-center mb-4">Carrinho de Compras</h2>
-            </div>
-            <div class="col-md-8">
-                <div class="card">
-                <div class="card-body">
-                    <!-- Aqui serão exibidos os itens adicionados ao carrinho -->
-                    <div class="carrinho-item row mb-3">
-                        <!-- <div class="col-3">
-                            <img src="/images/placeholder-9.png" alt="Nome do Produto" class="img-fluid">
-                        </div> -->
-                        <div class="col-9">
-                            <h5 class="mb-1">Nome do Produto</h5>
-                            <p class="mb-1">Preço: R$ 99,99</p>
-                            <p class="mb-1">Quantidade: 1</p>
-                            <p class="mb-0">Preço Total: R$ 99,99</p>
-                        </div>
-                        <div class="col-12">
-                            <a href="#" class="btn btn-danger btn-sm float-end">Remover</a>
+                <div class="col-12 area-titulo">
+                    <h2 class="text-center mb-4 titulo">Carrinho de Compras</h2>
+                </div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Aqui serão exibidos os itens adicionados ao carrinho -->
+                            <div class="carrinho-item row mb-3">
+                                <!-- <div class="col-3">
+                                    <img src="/images/placeholder-9.png" alt="Nome do Produto" class="img-fluid">
+                                </div> -->
+                                <div class="col-9">
+                                    <h5 class="mb-1">Nome do Produto</h5>
+                                    <p class="mb-1">Preço: R$ 99,99</p>
+                                    <p class="mb-1">Quantidade: 1</p>
+                                    <p class="mb-0">Preço Total: R$ 99,99</p>
+                                </div>
+                                <div class="col-12">
+                                    <a href="#" class="btn btn-danger btn-sm float-end">Remover</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="mb-3">Resumo do Pedido</h5>
+                            <p class="mb-1">Subtotal: R$ 99,99</p>
+                            <p class="mb-1">Frete: R$ 10,00</p>
+                            <h5>Total: R$ 109,99</h5>
+                            <a href="#" class="btn btn-primary btn-lg w-100 mt-3">Finalizar Compra</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                <div class="card-body">
-                    <h5 class="mb-3">Resumo do Pedido</h5>
-                    <p class="mb-1">Subtotal: R$ 99,99</p>
-                    <p class="mb-1">Frete: R$ 10,00</p>
-                    <h5>Total: R$ 109,99</h5>
-                    <a href="#" class="btn btn-primary btn-lg w-100 mt-3">Finalizar Compra</a>
-                </div>
-                </div>
-            </div>
             </div>
         </div>
     </section>
