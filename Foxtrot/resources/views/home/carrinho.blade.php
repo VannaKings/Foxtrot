@@ -113,11 +113,11 @@
                             <p class="card-text">Preço: R$ 99,00</p>
                             <div class="card-text" style="display:flex; justify-content:center">
                                 <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
-                                    <input type="text" style="width: 40px">
+                                    <input type="number" style="width: 40px">
                                 <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-danger" style="margin-bottom: 10px">Remover</a>
+                        <a href="#" class="btn btn-danger" style="margin-bottom: 10px"><i class="fa-solid fa-trash-can" style="margin-right: 10px"></i>Remover</a>
                     </div>
                 </div>
 

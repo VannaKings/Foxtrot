@@ -37,12 +37,12 @@
                 <form class=" px-3 py-3" method = "POST" action = "{{ route('login') }}">
                 @csrf
                     <div class="mb-3">
-                    <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" name = "email">
+                        <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" name = "email">
                     </div>
                     <div class="mb-3">
-                    <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name = "password">
+                        <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name = "password">
                     </div>
                     <div class="mb-3">
 
@@ -56,27 +56,15 @@
             @else
             <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown botao" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                <i class="fa-solid fa-user"></i>Olá, {{Auth::user()->USUARIO_NOME}}
+                    <i class="fa-solid fa-user"></i>Olá, {{Auth::user()->USUARIO_NOME}}
                 </button>
-                <div class="dropdown-menu">
-                <form class=" px-3 py-3" method = "POST" action = "{{ route('login') }}">
-                @csrf
-                    <div class="mb-3">
-                    <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" name = "email">
-                    </div>
-                    <div class="mb-3">
-                    <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name = "password">
-                    </div>
-                    <div class="mb-3">
-
-                    </div>
-                    <button type="submit" class="btn btn-primary">Entrar</button>
-                </form>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/cadastro">Novo por aqui? Cadastre-se</a>
-                </div>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
+                    <li><a class="dropdown-item" href="/pedidos">Pedidos</a></li>
+                    <li><a class="dropdown-item" href="/carrinho">Carrinho</a></li>
+                    <hr>
+                    <li style="margin-top:-5px"><a class="dropdown-item" href=""><i class="fa-solid fa-arrow-right-from-bracket" style="margin-right:10px;"></i>Sair</a></li>
+                </ul>
             </div>
             @endif
             <div class="carrinho">

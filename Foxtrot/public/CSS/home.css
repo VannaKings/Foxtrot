@@ -165,12 +165,14 @@ img{
     width: 22em!important;
     margin: 0 10px;
 }
+
 .card img{
     max-width: 300px;
-    height: 280px;
+    max-height: 160px;
     display: block;
     margin: 20px auto;
 }
+
 .card{
     text-align: center;
 }

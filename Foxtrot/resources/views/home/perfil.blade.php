@@ -52,13 +52,14 @@
 
             <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown botao" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                <i class="fa-solid fa-user"></i>Olá, fulano
+                    <i class="fa-solid fa-user"></i>Olá, fulano
                 </button>
-
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
-                <li><a class="dropdown-item" href="/pedidos">Pedidos</a></li>
-                <li><a class="dropdown-item" href="/carrinho">Carrinho</a></li>
+                    <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
+                    <li><a class="dropdown-item" href="/pedidos">Pedidos</a></li>
+                    <li><a class="dropdown-item" href="/carrinho">Carrinho</a></li>
+                    <hr>
+                    <li style="margin-top:-5px"><a class="dropdown-item" href=""><i class="fa-solid fa-arrow-right-from-bracket" style="margin-right:10px;"></i>Sair</a></li>
                 </ul>
             </div>
 
