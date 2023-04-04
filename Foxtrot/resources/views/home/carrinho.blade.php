@@ -58,7 +58,7 @@
                 <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
                 <li><a class="dropdown-item" href="/pedidos">Pedidos</a></li>
-                <li><a class="dropdown-item" href="/carrinho">Carrinho</a></li>
+                <li><a class="dropdown-item" href="/">Carrinho</a></li>
                 </ul>
             </div>
 
@@ -96,41 +96,51 @@
 
     <div class="espaco"></div>
 
-    <div class="container">
-        <div class="area-titulo">
-            <h3 class="titulo">Histórico de Pedidos</h3>
-        </div>
+    <section class="carrinho">
+        <div class="container">
 
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>ID do Pedido</th>
-                    <th>Data</th>
-                    <th>Total</th>
-                    <th>Comprar novamente</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>001</td>
-                    <td>01/01/2023</td>
-                    <td>R$ 100,00</td>
-                    <td><button class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></button></td>
-                </tr>
-                <tr>
-                    <td>002</td>
-                    <td>02/01/2023</td>
-                    <td>R$ 200,00</td>
-                    <td><button class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></button></td>
-                </tr>
-                <tr>
-                    <td>003</td>
-                    <td>03/01/2023</td>
-                    <td>R$ 300,00</td>
-                    <td><button class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+            <div class="col-12 area-titulo">
+                <h2 class="text-center mb-4 titulo">Carrinho de Compras</h2>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; padding: 30px; background-color:whitesmoke">
+                <div class="row">
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="/images/placeholder-9.png" alt="Nome do Produto" class="card-img-top" style="max-height:120px">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome do Produto</h5>
+                            <p class="card-text">Preço: R$ 99,00</p>
+                            <div class="card-text" style="display:flex; justify-content:center">
+                                <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
+                                    <input type="text" style="width: 40px">
+                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-danger" style="margin-bottom: 10px">Remover</a>
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 style="margin-top:10px">Resumo do Pedido</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Subtotal: R$ 99,99</p>
+                            <p class="card-text">Frete: R$ 10,00</p>
+                            <h5>Total: R$ 109,99</h5>
+
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary ">Finalizar Compra</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 </body>
 </html>

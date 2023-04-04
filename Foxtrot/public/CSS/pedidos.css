@@ -1,4 +1,3 @@
-/* Seção Detalhes(produto)  */
 :root
 {
     --cinza: #ccc;
@@ -19,30 +18,21 @@
     padding: 20px;
 }
 
-.area-titulo-endereco .titulo, .area-titulo .titulo{
+.area-titulo .titulo{
     color: white;
     margin-bottom: 0!important;
 }
 
-.area-titulo-endereco{
-    width: 100%;
-    background-color: var(--roxo);
-    padding: 20px;
+th{
+    font-weight: bold;
 }
 
-.area-perfil, .area-endereco{
-    background-color: whitesmoke;
-    padding: 20px;
+.table .btn{
+    background-color:#66f263;
+    border-color:#66f263;
 }
 
-.div-image{
-    display: flex;
-    justify-content: center;
+.table button
+{
+    margin-left: 40px!important;
 }
-
-.div-image img{
-    max-width: 400px;
-    max-height: 200px;
-}
-
-
