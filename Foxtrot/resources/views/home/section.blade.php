@@ -138,7 +138,7 @@
               <div class="container-nav-produtos">
                 @foreach($produtos as $produto)
                 <div class="card">
-                  <img src="/images/placeholder-9.png" class="card-img-top" alt=".">
+                  <img src="{{$produto->getFirstImage()}}" class="card-img-top" alt=".">
                   <div class="card-body">
                     <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
                     <p class="card-text">Preço: R$ {{$produto->getPrecoDesconto()}}</p>

@@ -21,6 +21,9 @@ class User extends Authenticatable
         "USUARIO_SENHA",
         "USUARIO_CPF"
     ];
+    protected $hidden = [
+        'USUARIO_SENHA'
+    ];
 
     public $timestamps = false;
 }

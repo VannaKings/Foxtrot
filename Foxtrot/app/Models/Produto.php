@@ -46,6 +46,14 @@ class Produto extends Model
         }
 
     }
+    public function getFirstImage(){
+        $firstImage = ProdutoImagem::find($this->PRODUTO_ID);
+        if($firstImage != null){
+            return $firstImage->IMAGEM_URL;
+        }else{
+            return '/images/placeholder-9.png';
+        }
+    }
 
 
 }

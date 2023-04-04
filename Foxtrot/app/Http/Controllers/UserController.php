@@ -33,7 +33,8 @@ class UserController extends Controller
             "USUARIO_NOME" => $request->USUARIO_NOME,
             "USUARIO_EMAIL" => $request->USUARIO_EMAIL,
             "USUARIO_SENHA" => $request->USUARIO_SENHA,
-            "USUARIO_CPF" => $request->USUARIO_CPF,
+            // "USUARIO_CPF" => $request->USUARIO_CPF
+            "USUARIO_CPF" => '11111111111'
         ]);
 
         return redirect()->route('home.index');

@@ -41,9 +41,9 @@
         <span class="visually-hidden">Previous</span>
       </div>
 
-    @foreach($produtos->reverse()->take(3) as $produto)
+    @foreach($produtos->where('PRODUTO_ATIVO',1)->reverse()->take(3) as $produto)
       <div class="card" style="width: 18rem;">
-        <img src="/images/placeholder-9.png" class="card-img-top" alt="...">
+        <img src="{{$produto->getFirstImage()}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
           <p class="card-text">Preço: R$ {{number_format($produto->PRODUTO_PRECO,2,",",".")}}</p>
@@ -96,9 +96,9 @@
       </div>
 
 
-      @foreach($produtos->take(3) as $produto)
+      @foreach($produtos->where('PRODUTO_ATIVO',1)->take(3) as $produto)
         <div class="card" style="width: 18rem;">
-            <img src="/images/placeholder-9.png" class="card-img-top" alt="...">
+            <img src="{{$produto->getFirstImage()}}" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
             <p class="card-text">Preço: R$ {{number_format($produto->PRODUTO_PRECO,2,",",".")}}</p>

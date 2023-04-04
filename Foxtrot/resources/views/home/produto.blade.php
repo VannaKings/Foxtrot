@@ -41,7 +41,7 @@
                         <li><img class='imgs' src="/images/placeholder-9.png" alt='Imagem do produto'></li>
                         <li><img class='imgs' src="/images/placeholder-9.png" alt='Imagem do produto'></li>
                     </ul>
-                    <img class='img-principal' src="/images/placeholder-9.png" alt='Imagem principal'>
+                    <img class='img-principal' src="{{$produto->getFirstImage()}}" alt='Imagem principal'>
 
                     <div class="informacoes">
                         <h2>{{$produto->PRODUTO_NOME}}</h2>
@@ -82,11 +82,11 @@
             @foreach($maisProdutos as $produtoo)
                 @if($produtoo->PRODUTO_ID !== $produto->PRODUTO_ID)
                 <div class="card" style="width: 18rem;">
-                    <img src="/images/placeholder-9.png" class="card-img-top" alt="...">
+                    <img src="$produtoo->getFirstImage()" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$produtoo->PRODUTO_NOME}}</h5>
                         <p class="card-text">Preço: R$ {{$produtoo->getPrecoDesconto()}}</p>
-                        <a href="#" class="btn btn-primary">Ver mais</a>
+                        <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-primary">Ver mais</a>
                     </div>
                 </div>
                 @endif
