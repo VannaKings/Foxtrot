@@ -98,43 +98,47 @@
 
     <section class="carrinho">
         <div class="container">
-            <div class="row">
-                <div class="col-12 area-titulo">
-                    <h2 class="text-center mb-4 titulo">Carrinho de Compras</h2>
-                </div>
-                <div class="col-md-8">
-                    <div class="card">
+
+            <div class="col-12 area-titulo">
+                <h2 class="text-center mb-4 titulo">Carrinho de Compras</h2>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; padding: 30px; background-color:whitesmoke">
+                <div class="row">
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="/images/placeholder-9.png" alt="Nome do Produto" class="card-img-top" style="max-height:120px">
                         <div class="card-body">
-                            <!-- Aqui serão exibidos os itens adicionados ao carrinho -->
-                            <div class="carrinho-item row mb-3">
-                                <!-- <div class="col-3">
-                                    <img src="/images/placeholder-9.png" alt="Nome do Produto" class="img-fluid">
-                                </div> -->
-                                <div class="col-9">
-                                    <h5 class="mb-1">Nome do Produto</h5>
-                                    <p class="mb-1">Preço: R$ 99,99</p>
-                                    <p class="mb-1">Quantidade: 1</p>
-                                    <p class="mb-0">Preço Total: R$ 99,99</p>
-                                </div>
-                                <div class="col-12">
-                                    <a href="#" class="btn btn-danger btn-sm float-end">Remover</a>
-                                </div>
+                            <h5 class="card-title">Nome do Produto</h5>
+                            <p class="card-text">Preço: R$ 99,00</p>
+                            <div class="card-text" style="display:flex; justify-content:center">
+                                <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
+                                    <input type="text" style="width: 40px">
+                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
                             </div>
                         </div>
+                        <a href="#" class="btn btn-danger" style="margin-bottom: 10px">Remover</a>
                     </div>
                 </div>
-                <div class="col-md-4">
+
+                <div class="">
                     <div class="card">
+                        <div class="card-header">
+                            <h4 style="margin-top:10px">Resumo do Pedido</h4>
+                        </div>
                         <div class="card-body">
-                            <h5 class="mb-3">Resumo do Pedido</h5>
-                            <p class="mb-1">Subtotal: R$ 99,99</p>
-                            <p class="mb-1">Frete: R$ 10,00</p>
+                            <p class="card-text">Subtotal: R$ 99,99</p>
+                            <p class="card-text">Frete: R$ 10,00</p>
                             <h5>Total: R$ 109,99</h5>
-                            <a href="#" class="btn btn-primary btn-lg w-100 mt-3">Finalizar Compra</a>
+
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary ">Finalizar Compra</a>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
