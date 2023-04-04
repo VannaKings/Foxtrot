@@ -37,10 +37,10 @@ class RegisteredUserController extends Controller
         // ]);
 
         $user = User::create([
-            'USUARIO_NOME' => $request->name,
+            'USUARIO_NOME' => $request->name. " " .$request->sobrenome,
             'USUARIO_EMAIL' => $request->email,
             'USUARIO_SENHA' => Hash::make($request->password),
-            'USUARIO_CPF' => '12345678910'
+            'USUARIO_CPF' => $request->cpf
         ]);
 
         event(new Registered($user));

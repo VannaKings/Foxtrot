@@ -27,21 +27,22 @@
                 <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
                 <button class="btn btn-primary botao" type="submit" id="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
+            @if(!Auth::check())
 
             <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown botao" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                 <i class="fa-solid fa-user"></i>Olá! entre ou cadastre-se
                 </button>
                 <div class="dropdown-menu">
-                <form class=" px-3 py-3" method = "POST" action = "{{route('home.index')}}">
+                <form class=" px-3 py-3" method = "POST" action = "{{ route('login') }}">
                 @csrf
                     <div class="mb-3">
                     <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" name = "USUARIO_EMAIL">
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" name = "email">
                     </div>
                     <div class="mb-3">
                     <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name = "USUARIO_SENHA">
+                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name = "password">
                     </div>
                     <div class="mb-3">
 
@@ -52,7 +53,32 @@
                 <a class="dropdown-item" href="/cadastro">Novo por aqui? Cadastre-se</a>
                 </div>
             </div>
+            @else
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown botao" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                <i class="fa-solid fa-user"></i>Olá, {{Auth::user()->USUARIO_NOME}}
+                </button>
+                <div class="dropdown-menu">
+                <form class=" px-3 py-3" method = "POST" action = "{{ route('login') }}">
+                @csrf
+                    <div class="mb-3">
+                    <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" name = "email">
+                    </div>
+                    <div class="mb-3">
+                    <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" name = "password">
+                    </div>
+                    <div class="mb-3">
 
+                    </div>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </form>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/cadastro">Novo por aqui? Cadastre-se</a>
+                </div>
+            </div>
+            @endif
             <div class="carrinho">
                 <i class="fa-solid fa-cart-shopping"></i>
             </div>

@@ -15,27 +15,27 @@
     <img src="/images/logo.png" alt="logo" class="logo" style="max-width: 400px; margin-bottom: 20px;">
     <div class="container">
         <h1>Cadastre-se</h1>
-        <form class="row g-3" method = "POST" action = "{{route('registrar')}}">
+        <form class="row g-3" method = "POST" action = "{{ route('register') }}">
            @csrf
             <div class="col-md-6">
                 <label for="inputName" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="inputNome" name='USUARIO_NOME'>
+                <input type="text" class="form-control" id="inputNome" name='name'>
             </div>
             <div class="col-md-6">
                 <label for="inputName" class="form-label">Sobrenome</label>
-                <input type="text" class="form-control" id="inputSobrenome" name='USUARIO_SOBRENOME'>
+                <input type="text" class="form-control" id="inputSobrenome" name='sobrenome'>
               </div>
             <div class="col-md-6">
               <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" name='USUARIO_EMAIL'>
+              <input type="email" class="form-control" id="inputEmail4" name='email'>
             </div>
             <div class="col-md-6">
               <label for="inputPassword4" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="inputPassword4" name = 'USUARIO_SENHA'>
+              <input type="password" class="form-control" id="inputPassword4" name = 'password'>
             </div>
             <div class="col-md-6">
               <label for="inputCPF4" class="form-label">CPF</label>
-              <input type="number" class="form-control" id="inputCPF4" name = 'USUARIO_CPF'>
+              <input type="number" class="form-control" id="inputCPF4" name = 'cpf'>
             </div>
             <div class="col-12">
               <label for="inputAddress" class="form-label">Endereço</label>
