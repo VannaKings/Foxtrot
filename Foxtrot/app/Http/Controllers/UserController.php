@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\Models\User;
 use App\Models\Produto;
-
+use Auth;
 
 class UserController extends Controller
 {
@@ -41,7 +41,13 @@ class UserController extends Controller
     }
 
     public function perfil(){
-        return view('home.perfil');
+        if(Auth::check()){
+            return view('home.perfil');
+        }
+        else{
+            abort(404);
+        }
+
     }
 
     public function pedidos(){

@@ -13,13 +13,13 @@
                 <i class="fa-solid fa-bars"></i>Menu
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/">Inicio</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Bonecas</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Carrinhos</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Colecionaveis</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Lego</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Esportes</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Bebês</a></li>
+                    <li><a class="dropdown-item" href="{{url('/')}}">Inicio</a></li>
+                    <li><a class="dropdown-item" href="{{url('produtos')}}">Bonecas</a></li>
+                    <li><a class="dropdown-item" href="{{url('produtos')}}">Carrinhos</a></li>
+                    <li><a class="dropdown-item" href="{{url('produtos')}}">Colecionaveis</a></li>
+                    <li><a class="dropdown-item" href="{{url('produtos')}}">Lego</a></li>
+                    <li><a class="dropdown-item" href="{{url('produtos')}}">Esportes</a></li>
+                    <li><a class="dropdown-item" href="{{url('produtos')}}">Bebês</a></li>
                 </ul>
             </div>
 
@@ -50,7 +50,7 @@
                     <button type="submit" class="btn btn-primary">Entrar</button>
                 </form>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/cadastro">Novo por aqui? Cadastre-se</a>
+                <a class="dropdown-item" href="{{url('cadastro')}}">Novo por aqui? Cadastre-se</a>
                 </div>
             </div>
             @else
@@ -63,7 +63,11 @@
                     <li><a class="dropdown-item" href="/pedidos">Pedidos</a></li>
                     <li><a class="dropdown-item" href="/carrinho">Carrinho</a></li>
                     <hr>
-                    <li style="margin-top:-5px"><a class="dropdown-item" href=""><i class="fa-solid fa-arrow-right-from-bracket" style="margin-right:10px;"></i>Sair</a></li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <li style="margin-top:-5px"><button type="submit" class="dropdown-item" ><i class="fa-solid fa-arrow-right-from-bracket" style="margin-right:10px;"></i>Sair</button></li>
+                    </form>
+
                 </ul>
             </div>
             @endif

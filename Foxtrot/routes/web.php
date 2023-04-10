@@ -19,13 +19,13 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 Route::get('/', [ProdutoController::class, 'home'])->name('home.index');
-Route::get('/cadastro', [UserController::class, 'create']);
+Route::get('/cadastro', [UserController::class, 'create'])->name('cadastro');
 Route::post('/', [UserController::class, 'store'])->name('registrar');
 
 
 Route::get('/produto/{produto}', [ProdutoController::class, 'show']);
 
-Route::get('/produtos', [ProdutoController::class, 'produtos']);
+Route::get('/produtos', [ProdutoController::class, 'produtos'])->name('produtos');
 
 Route::get('/cadastro', [UserController::class, 'index']);
 
