@@ -156,7 +156,7 @@
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="cep" class="form-label">CEP:</label>
-                                <input type="text" class="form-control" id="cep" placeholder="Seu CEP">
+                                <input type="text" class="form-control" id="cep" placeholder="11220-330">
                             </div>
                             <div class="mb-3 col-md-12">
                                 <label for="rua" class="form-label">Rua:</label>
@@ -164,19 +164,19 @@
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="numero" class="form-label">Número:</label>
-                                <input type="text" class="form-control" id="numero" placeholder="Seu número">
+                                <input type="text" class="form-control" id="numero" placeholder="123">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="complemento" class="form-label">Complemento:</label>
-                                <input type="text" class="form-control" id="complemento" placeholder="Seu complemento (opcional)">
+                                <input type="text" class="form-control" id="complemento" placeholder="Casa, Apartamento (opcional)">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="estado" class="form-label">Estado:</label>
-                                <input type="text" class="form-control" id="estado" placeholder="Seu bairro">
+                                <input type="text" class="form-control" id="estado" placeholder="SP">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="cidade" class="form-label">Cidade:</label>
-                                <input type="text" class="form-control" id="cidade" placeholder="Sua cidade">
+                                <input type="text" class="form-control" id="cidade" placeholder="São Paulo">
                             </div>
                         </form>
                     </div>
