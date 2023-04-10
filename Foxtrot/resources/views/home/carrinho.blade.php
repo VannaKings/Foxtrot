@@ -22,78 +22,9 @@
     <script src="https://kit.fontawesome.com/0169495cc4.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="header">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="/" style="max-width: 55px;"><img src="/images/logo-abreviada.png" alt="" style="max-width: 100px; max-height: 50px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    @extends('layout.app')
 
-            <div class="dropdown">
-                <button class="btn btn-primary botao dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-bars"></i>Menu
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/">Inicio</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Bonecas</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Carrinhos</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Colecionaveis</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Lego</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Esportes</a></li>
-                    <li><a class="dropdown-item" href="/produtos">Bebês</a></li>
-                </ul>
-            </div>
-
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                <button class="btn btn-primary botao" type="submit" id="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-
-            <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown botao" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                <i class="fa-solid fa-user"></i>Olá, fulano
-                </button>
-
-                <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
-                <li><a class="dropdown-item" href="/pedidos">Pedidos</a></li>
-                <li><a class="dropdown-item" href="/">Carrinho</a></li>
-                </ul>
-            </div>
-
-            <!-- <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown botao" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                <i class="fa-solid fa-user"></i>Olá! entre ou cadastre-se
-                </button>
-                <div class="dropdown-menu">
-                <form class=" px-3 py-3">
-                    <div class="mb-3">
-                    <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
-                    </div>
-                    <div class="mb-3">
-                    <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
-                    </div>
-                    <div class="mb-3">
-
-                    </div>
-                    <button type="submit" class="btn btn-primary">Entrar</button>
-                </form>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/cadastro">Novo por aqui? Cadastre-se</a>
-                </div>
-            </div> -->
-
-            <div class="carrinho">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-
-            </div>
-        </nav>
-    </div>
-
+    @section('main')
     <div class="espaco"></div>
 
     <section class="carrinho">
@@ -141,6 +72,7 @@
 
         </div>
     </section>
+    @endsection
 
 </body>
 </html>

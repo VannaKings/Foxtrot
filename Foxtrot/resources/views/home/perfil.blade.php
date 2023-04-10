@@ -22,79 +22,9 @@
     <script src="https://kit.fontawesome.com/0169495cc4.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="header">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="/" style="max-width: 55px;"><img src="/images/logo-abreviada.png" alt="" style="max-width: 100px; max-height: 50px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    @extends('layout.app')
 
-            <div class="dropdown">
-                <button class="btn btn-primary botao dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-bars"></i>Menu
-                </button>
-                <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/">Inicio</a></li>
-                <li><a class="dropdown-item" href="/produtos">Bonecas</a></li>
-                <li><a class="dropdown-item" href="/produtos">Carrinhos</a></li>
-                <li><a class="dropdown-item" href="/produtos">Colecionaveis</a></li>
-                <li><a class="dropdown-item" href="/produtos">Lego</a></li>
-                <li><a class="dropdown-item" href="/produtos">Esportes</a></li>
-                <li><a class="dropdown-item" href="/produtos">Bebês</a></li>
-                </ul>
-            </div>
-
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                <button class="btn btn-primary botao" type="submit" id="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-
-            <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown botao" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                    <i class="fa-solid fa-user"></i>Olá, fulano
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
-                    <li><a class="dropdown-item" href="/pedidos">Pedidos</a></li>
-                    <li><a class="dropdown-item" href="/carrinho">Carrinho</a></li>
-                    <hr>
-                    <li style="margin-top:-5px"><a class="dropdown-item" href=""><i class="fa-solid fa-arrow-right-from-bracket" style="margin-right:10px;"></i>Sair</a></li>
-                </ul>
-            </div>
-
-            <!-- <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown botao" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                <i class="fa-solid fa-user"></i>Olá! entre ou cadastre-se
-                </button>
-                <div class="dropdown-menu">
-                <form class=" px-3 py-3">
-                    <div class="mb-3">
-                    <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
-                    </div>
-                    <div class="mb-3">
-                    <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
-                    </div>
-                    <div class="mb-3">
-
-                    </div>
-                    <button type="submit" class="btn btn-primary">Entrar</button>
-                </form>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/cadastro">Novo por aqui? Cadastre-se</a>
-                </div>
-            </div> -->
-
-            <div class="carrinho">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-
-            </div>
-        </nav>
-    </div>
-
+    @section('main')
     <div class="espaco"></div>
 
     <div class="container">
@@ -111,12 +41,11 @@
                         <img src="/images/img-perfil.png" alt="">
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="margin-top: 10px">
                         <ul class="list-group">
-                            <li class="list-group-item"><strong>Nome Completo:</strong> John Doe</li>
-                            <li class="list-group-item"><strong>E-mail:</strong> john.doe@example.com</li>
-                            <li class="list-group-item"><strong>CPF:</strong> xxx.xxx.xxx-xx</li>
-                            <li class="list-group-item"><strong>Telefone:</strong> (xx) xxxx-xxxx</li>
+                            <li class="list-group-item"><strong>Nome:</strong> {{Auth::user()->USUARIO_NOME}}</li>
+                            <li class="list-group-item"><strong>E-mail:</strong> {{Auth::user()->USUARIO_EMAIL}}</li>
+                            <li class="list-group-item"><strong>CPF:</strong> {{Auth::user()->USUARIO_CPF}}</li>
                         </ul>
                         <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#editarInfoModal">Editar Informações</button>
                     </div>
@@ -130,13 +59,13 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editarInfoModalLabel">Editar Informações Pessoais</h5>
+                        <h2 class="modal-title" id="editarInfoModalLabel">Editar</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form>
                         <div class="mb-3">
-                            <label for="nome" class="form-label">Nome Completo:</label>
+                            <label for="nome" class="form-label">Nome:</label>
                             <input type="text" class="form-control" id="nome" placeholder="Seu nome completo">
                         </div>
                         <div class="mb-3">
@@ -144,8 +73,8 @@
                             <input type="email" class="form-control" id="email" placeholder="Seu melhor e-mail">
                         </div>
                         <div class="mb-3">
-                            <label for="telefone" class="form-label">Telefone:</label>
-                            <input type="tel" class="form-control" id="telefone" placeholder="(xx) xxxx-xxxx">
+                            <label for="telefone" class="form-label">CPF:</label>
+                            <input type="tel" class="form-control" id="telefone" placeholder="123.456.789-10">
                         </div>
                         </form>
                     </div>
@@ -169,7 +98,11 @@
                             <li class="list-group-item col">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5>Endereço Principal</h5>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <div>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button> -->
                             </div>
                             <div class="mt-2">
                                 <p><strong>Nome:</strong> John Doe</p>
@@ -186,7 +119,10 @@
                             <li class="list-group-item col">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5>Outro Endereço</h5>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <div>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                </div>
                             </div>
                             <div class="mt-2">
                                 <p><strong>Nome:</strong> John Doe</p>
@@ -208,32 +144,37 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="enderecoModalLabel">Adicionar/Editar Endereço</h5>
+                        <h2 class="modal-title" id="enderecoModalLabel">Adicionar/Editar</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
+                        <form class="row g-3">
+
+                            <div class="mb-3 col-md-6">
+                                <label for="rua" class="form-label">Nome:</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Casa/Escritório">
+                            </div>
+                            <div class="mb-3 col-md-6">
                                 <label for="cep" class="form-label">CEP:</label>
                                 <input type="text" class="form-control" id="cep" placeholder="Seu CEP">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 col-md-12">
                                 <label for="rua" class="form-label">Rua:</label>
                                 <input type="text" class="form-control" id="rua" placeholder="Sua rua">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 col-md-6">
                                 <label for="numero" class="form-label">Número:</label>
                                 <input type="text" class="form-control" id="numero" placeholder="Seu número">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 col-md-6">
                                 <label for="complemento" class="form-label">Complemento:</label>
                                 <input type="text" class="form-control" id="complemento" placeholder="Seu complemento (opcional)">
                             </div>
-                            <div class="mb-3">
-                                <label for="bairro" class="form-label">Bairro:</label>
-                                <input type="text" class="form-control" id="bairro" placeholder="Seu bairro">
+                            <div class="mb-3 col-md-6">
+                                <label for="estado" class="form-label">Estado:</label>
+                                <input type="text" class="form-control" id="estado" placeholder="Seu bairro">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 col-md-6">
                                 <label for="cidade" class="form-label">Cidade:</label>
                                 <input type="text" class="form-control" id="cidade" placeholder="Sua cidade">
                             </div>
@@ -246,7 +187,7 @@
                 </div>
             </div>
         </div>
-
+        @endsection
         <!-- <div class="container my-5">
                 <div class="col-md-6">
                     <h2>Endereços</h2>

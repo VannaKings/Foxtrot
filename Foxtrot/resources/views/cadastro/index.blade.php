@@ -13,7 +13,7 @@
 </head>
 <body>
     <img src="/images/logo.png" alt="logo" class="logo" style="max-width: 400px; margin-bottom: 20px;">
-    <div class="container">
+    <div class="container" style="margin-bottom:40px">
         <h1>Cadastre-se</h1>
         <form class="row g-3" method = "POST" action = "{{ route('register') }}">
            @csrf
@@ -21,10 +21,6 @@
                 <label for="inputName" class="form-label">Nome</label>
                 <input type="text" class="form-control" id="inputNome" name='name'>
             </div>
-            <div class="col-md-6">
-                <label for="inputName" class="form-label">Sobrenome</label>
-                <input type="text" class="form-control" id="inputSobrenome" name='sobrenome'>
-              </div>
             <div class="col-md-6">
               <label for="inputEmail4" class="form-label">Email</label>
               <input type="email" class="form-control" id="inputEmail4" name='email'>
@@ -36,25 +32,6 @@
             <div class="col-md-6">
               <label for="inputCPF4" class="form-label">CPF</label>
               <input type="number" class="form-control" id="inputCPF4" name = 'cpf'>
-            </div>
-            <div class="col-12">
-              <label for="inputAddress" class="form-label">Endereço</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="">
-            </div>
-            <div class="col-4">
-                <label for="inputZip" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="inputZip">
-            </div>
-            <div class="col-md-4">
-              <label for="inputCity" class="form-label">Cidade</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4">
-              <label for="inputState" class="form-label">Estado</label>
-              <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
             </div>
             <div class="col-12" style="margin-top: 40px;">
               <button type="submit" class="btn btn-primary">Cadastrar</button>
