@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoriaController;
-
+use App\Http\Controllers\CarrinhoController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -33,4 +33,5 @@ Route::get('/perfil', [UserController::class, 'perfil']);
 
 Route::get('/pedidos', [UserController::class, 'pedidos']);
 
-Route::get('/carrinho', [UserController::class, 'carrinho']);
+Route::get('/carrinho/{produto}', [CarrinhoController::class, 'store'])->name('carrinho.store');
+Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.index');

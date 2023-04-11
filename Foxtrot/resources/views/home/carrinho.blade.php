@@ -26,7 +26,7 @@
 
     @section('main')
     <div class="espaco"></div>
-
+    <div style='display: none'>{{$valorTotal = 0}}</div>
     <section class="carrinho">
         <div class="container">
 
@@ -36,31 +36,37 @@
 
             <div style="display:flex; justify-content:space-between; padding: 30px; background-color:whitesmoke">
                 <div class="row">
-
+                    @foreach($carrinho as $produto)
                     <div class="card" style="width: 18rem;">
                         <img src="/images/placeholder-9.png" alt="Nome do Produto" class="card-img-top" style="max-height:120px">
                         <div class="card-body">
-                            <h5 class="card-title">Nome do Produto</h5>
-                            <p class="card-text">Preço: R$ 99,00</p>
+                            <h5 class="card-title">{{$produto->Produto->PRODUTO_NOME}}</h5>
+                            <p class="card-text">Preço: R$ {{$produto->Produto->getPrecoDesconto()}}</p>
                             <div class="card-text" style="display:flex; justify-content:center">
                                 <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
-                                    <input type="number" style="width: 40px">
+                                    <input type="number" style="width: 40px; text-align: center;" placeholder = '{{$produto->ITEM_QTD}}'>
                                 <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
                             </div>
                         </div>
                         <a href="#" class="btn btn-danger" style="margin-bottom: 10px"><i class="fa-solid fa-trash-can" style="margin-right: 10px"></i>Remover</a>
                     </div>
-                </div>
 
+                    @endforeach
+                </div>
+                <div style='display: none'>
+                    @for($i = 0; $i < count($carrinho); $i++)
+                    {{$valorTotal += (float)$carrinho[$i]->Produto->getPrecoDesconto()}}
+                    @endfor
+                </div>
                 <div class="">
                     <div class="card">
                         <div class="card-header">
                             <h4 style="margin-top:10px">Resumo do Pedido</h4>
                         </div>
                         <div class="card-body">
-                            <p class="card-text">Subtotal: R$ 99,99</p>
+                            <p class="card-text">Subtotal: R$ {{number_format($valorTotal, 2, ',', '.')}}</p>
                             <p class="card-text">Frete: R$ 10,00</p>
-                            <h5>Total: R$ 109,99</h5>
+                            <h5>Total: R$ {{number_format(($valorTotal+ 10), 2, ',', '.')}}</h5>
 
                         </div>
                         <div class="card-footer">
