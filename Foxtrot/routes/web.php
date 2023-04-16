@@ -33,5 +33,7 @@ Route::get('/perfil', [UserController::class, 'perfil']);
 
 Route::get('/pedidos', [UserController::class, 'pedidos']);
 
-Route::get('/carrinho/{produto}', [CarrinhoController::class, 'store'])->name('carrinho.store');
+Route::post('/carrinho/{produto}', [CarrinhoController::class, 'store'])->name('carrinho.store');
 Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.index');
+
+Route::post('/carrinho/alterar/{produto}', [CarrinhoController::class, 'alterar'])->name('carrinho.alterar');

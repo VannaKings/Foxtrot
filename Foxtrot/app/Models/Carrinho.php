@@ -11,6 +11,7 @@ class Carrinho extends Model
     use HasFactory;
     protected $fillable = ["USUARIO_ID", "PRODUTO_ID", 'ITEM_QTD'];
     protected $table = 'CARRINHO_ITEM';
+    protected $primaryKey = 'USUARIO_ID';
     public $timestamps = false;
 
     public function Produto(){

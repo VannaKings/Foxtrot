@@ -37,25 +37,34 @@
             <div style="display:flex; justify-content:space-between; padding: 30px; background-color:whitesmoke">
                 <div class="row">
                     @foreach($carrinho as $produto)
-                    <div class="card" style="width: 18rem;">
-                        <img src="/images/placeholder-9.png" alt="Nome do Produto" class="card-img-top" style="max-height:120px">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$produto->Produto->PRODUTO_NOME}}</h5>
-                            <p class="card-text">Preço: R$ {{$produto->Produto->getPrecoDesconto()}}</p>
-                            <div class="card-text" style="display:flex; justify-content:center">
-                                <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
-                                    <input type="number" style="width: 40px; text-align: center;" placeholder = '{{$produto->ITEM_QTD}}'>
-                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-danger" style="margin-bottom: 10px"><i class="fa-solid fa-trash-can" style="margin-right: 10px"></i>Remover</a>
-                    </div>
+                        @if($produto->ITEM_QTD > 0)
 
+                            <div class="card" style="width: 18rem;">
+                                <form action="/carrinho/alterar/{{$produto->PRODUTO_ID}}" method = "POST">
+                                @csrf
+                                    <img src="/images/placeholder-9.png" alt="Nome do Produto" class="card-img-top" style="max-height:120px">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{$produto->Produto->PRODUTO_NOME}}</h5>
+                                        <p class="card-text">Preço: R$ {{$produto->Produto->getPrecoDesconto()}}</p>
+                                        <div class="card-text" style="display:flex; justify-content:center">
+                                            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
+                                                <input type="number" style="width: 40px; text-align: center;" placeholder = '{{$produto->ITEM_QTD}}' name= "qtd" value="{{$produto->ITEM_QTD}}">
+                                            <button  type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-danger" style="margin-bottom: 10px"><i class="fa-solid fa-trash-can" style="margin-right: 10px"></i>Remover</button>
+                                </form>
+                            </div>
+
+
+                        @endif
                     @endforeach
                 </div>
                 <div style='display: none'>
                     @for($i = 0; $i < count($carrinho); $i++)
-                    {{$valorTotal += (float)$carrinho[$i]->Produto->getPrecoDesconto()}}
+                    {{$valor = (float)str_replace(',', '.', $carrinho[$i]->Produto->getPrecoDesconto())}}
+                    {{$qtd = (float)$carrinho[$i]->ITEM_QTD}}
+                    {{$valorTotal += (float)$valor*$qtd}}
                     @endfor
                 </div>
                 <div class="">

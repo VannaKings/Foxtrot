@@ -50,13 +50,15 @@
                         <p class='preco-destaque'>R$ {{$produto->getPrecoDesconto()}} </p>
                         <p class='informacoes-texto'>Categoria: {{$produto->Categoria->CATEGORIA_NOME}}</p>
                         <p class='informacoes-texto'><i class='fa-solid fa-box' style='margin-right:10px;'></i>Estoque: {{$produto->getEstoque()}}</p>
-                        <div class="adicionar">
-                            <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
-                            <input type="tel">
-                            <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
-                            <a href="#" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Adicionar</a>
-                        </div>
-
+                        <form action="/carrinho/{{$produto->PRODUTO_ID}}" method = "POST" >
+                        @csrf
+                            <div class="adicionar">
+                                <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" name = "qtd">
+                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
+                                <button type='submit' class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Adicionar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
