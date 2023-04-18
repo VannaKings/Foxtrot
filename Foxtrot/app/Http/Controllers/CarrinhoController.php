@@ -11,35 +11,48 @@ use Illuminate\Support\Facades\Auth;
 class CarrinhoController extends Controller
 {
     public function store(Produto $produto, Request $request){
-        // if(count(Carrinho::where('USUARIO_ID', Auth::user()->USUARIO_ID)->where('PRODUTO_ID', $produto->PRODUTO_ID)->get()) > 0){
-        //     // dd('Mais que 0');
+        $item = Carrinho::where('USUARIO_ID', Auth::user()->USUARIO_ID)
+                ->where('PRODUTO_ID',$produto->PRODUTO_ID)->first();
 
-        // }else{
-        //     // dd('igual 0');
-        // }
-        $cont = 0;
-        $carrinhoProduto = Carrinho::all('USUARIO_ID', 'PRODUTO_ID', 'ITEM_QTD');
-        foreach($carrinhoProduto as $carrinho){
-            if($carrinho['USUARIO_ID'] == Auth::user()->USUARIO_ID && $carrinho['PRODUTO_ID'] ==  $produto->PRODUTO_ID){
-                $cont++;
-            }else if($carrinho['USUARIO_ID'] === Auth::user()->USUARIO_ID){
-                $cont = $cont;
-            }
-        }
-        // dd("Cont: {$cont}");
-        if($cont === 0){
-            $carrinho = Carrinho::create([
+        if($item){
+            $item = $item->update([
+                'ITEM_QTD' => $item->ITEM_QTD + $request->qtd
+            ]);
+        }else{
+            $item = Carrinho::create([
                 'USUARIO_ID' => Auth::user()->USUARIO_ID,
                 'PRODUTO_ID' => $produto->PRODUTO_ID,
-                'ITEM_QTD' => $request->qtd
-            ]);
-
-
-        }else{
-            $carrinho = Carrinho::where('USUARIO_ID', Auth::user()->USUARIO_ID)->where('PRODUTO_ID', $produto->PRODUTO_ID)->update([
-                'ITEM_QTD' => $cont
+                'ITEM_QTD' =>  $request->qtd
             ]);
         }
+        $estoque = Estoque::where('PRODUTO_ID', $produto->PRODUTO_ID)->first();
+
+        $estoque->update([
+            'PRODUTO_QTD' => $estoque->PRODUTO_QTD - $request->qtd
+        ]);
+        // $cont = 0;
+        // $carrinhoProduto = Carrinho::all('USUARIO_ID', 'PRODUTO_ID', 'ITEM_QTD');
+        // foreach($carrinhoProduto as $carrinho){
+        //     if($carrinho['USUARIO_ID'] == Auth::user()->USUARIO_ID && $carrinho['PRODUTO_ID'] ==  $produto->PRODUTO_ID){
+        //         $cont++;
+        //     }else if($carrinho['USUARIO_ID'] === Auth::user()->USUARIO_ID){
+        //         $cont = $cont;
+        //     }
+        // }
+        // // dd("Cont: {$cont}");
+        // if($cont === 0){
+        //     $carrinho = Carrinho::create([
+        //         'USUARIO_ID' => Auth::user()->USUARIO_ID,
+        //         'PRODUTO_ID' => $produto->PRODUTO_ID,
+        //         'ITEM_QTD' => $request->qtd
+        //     ]);
+
+
+        // }else{
+        //     $carrinho = Carrinho::where('USUARIO_ID', Auth::user()->USUARIO_ID)->where('PRODUTO_ID', $produto->PRODUTO_ID)->update([
+        //         'ITEM_QTD' => $cont
+        //     ]);
+        // }
 
 
         return redirect(route('carrinho.index'));

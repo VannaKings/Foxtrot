@@ -52,12 +52,21 @@
                         <p class='informacoes-texto'><i class='fa-solid fa-box' style='margin-right:10px;'></i>Estoque: {{$produto->getEstoque()}}</p>
                         <form action="/carrinho/{{$produto->PRODUTO_ID}}" method = "POST" >
                         @csrf
+                            @if($produto->getEstoque() != "Indisponível")
                             <div class="adicionar">
                                 <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
                                 <input type="number" name = "qtd">
                                 <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
                                 <button type='submit' class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Adicionar</button>
                             </div>
+                            @else
+                            <div class="adicionar">
+                                <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
+                                <input type="number" name = "qtd">
+                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
+                                <button class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Adicionar</button>
+                            </div>
+                            @endif
                         </form>
                     </div>
                 </div>

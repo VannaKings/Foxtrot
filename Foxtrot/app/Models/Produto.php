@@ -39,7 +39,7 @@ class Produto extends Model
     }
     public function getEstoque(){
         $produtoEstoque = Estoque::find($this->PRODUTO_ID);
-        if($produtoEstoque != null){
+        if($produtoEstoque != null && $produtoEstoque->PRODUTO_QTD != 0){
             return $produtoEstoque->PRODUTO_QTD;
         }else{
             return 'Indisponível';
