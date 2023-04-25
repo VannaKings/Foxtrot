@@ -92,7 +92,10 @@
             </div>
 
             <div class="area-endereco">
+
                 <div class="row">
+                @if($endereco)
+                @foreach($endereco->where("ENDERECO_APAGADO", 0) as $endereco)
                     <div class="col-md-6">
                         <ul class="list-group">
                             <li class="list-group-item col">
@@ -100,21 +103,24 @@
                                 <h5>Endereço Principal</h5>
                                 <div>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
-                                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    <form action="/perfil/deletar/{{$endereco->ENDERECO_ID}}" method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    </form>
                                 </div>
                                 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button> -->
                             </div>
                             <div class="mt-2">
-                                <p><strong>Nome:</strong> John Doe</p>
-                                <p><strong>CEP:</strong> 12345-678</p>
-                                <p><strong>Rua:</strong> Rua da Exemplo, 123</p>
-                                <p><strong>Cidade:</strong> São Paulo</p>
-                                <p><strong>Estado:</strong> SP</p>
+                                <p><strong>Nome:</strong> {{$endereco->ENDERECO_NOME}}</p>
+                                <p><strong>CEP:</strong> {{$endereco->ENDERECO_CEP}}</p>
+                                <p><strong>Rua:</strong> {{$endereco->ENDERECO_LOGRADOURO}}, {{$endereco->ENDERECO_NUMERO}}</p>
+                                <p><strong>Cidade:</strong> {{$endereco->ENDERECO_CIDADE}}</p>
+                                <p><strong>Estado:</strong> {{$endereco->ENDERECO_ESTADO}}</p>
                             </div>
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                         <ul class="list-group">
                             <li class="list-group-item col">
                             <div class="d-flex justify-content-between align-items-center">
@@ -133,8 +139,11 @@
                             </div>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
+                @endforeach
+                @endif
                 </div>
+
                 <button type="button" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-plus"></i> Novo Endereço</button>
             </div>
         </div>
@@ -148,42 +157,43 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="row g-3">
-
+                        <form class="row g-3" method="post" action="/perfil/adicionar">
+                            @csrf
                             <div class="mb-3 col-md-6">
                                 <label for="rua" class="form-label">Nome:</label>
-                                <input type="text" class="form-control" id="nome" placeholder="Casa/Escritório">
+                                <input type="text" class="form-control" id="nome" placeholder="Casa/Escritório" name="nome">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="cep" class="form-label">CEP:</label>
-                                <input type="text" class="form-control" id="cep" placeholder="11220-330">
+                                <input type="text" class="form-control" id="cep" placeholder="11220-330" name="cep">
                             </div>
                             <div class="mb-3 col-md-12">
                                 <label for="rua" class="form-label">Rua:</label>
-                                <input type="text" class="form-control" id="rua" placeholder="Sua rua">
+                                <input type="text" class="form-control" id="rua" placeholder="Sua rua" name="logradouro">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="numero" class="form-label">Número:</label>
-                                <input type="text" class="form-control" id="numero" placeholder="123">
+                                <input type="text" class="form-control" id="numero" placeholder="123" name="numero">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="complemento" class="form-label">Complemento:</label>
-                                <input type="text" class="form-control" id="complemento" placeholder="Casa, Apartamento (opcional)">
+                                <input type="text" class="form-control" id="complemento" placeholder="Casa, Apartamento (opcional)" name="complemento">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="estado" class="form-label">Estado:</label>
-                                <input type="text" class="form-control" id="estado" placeholder="SP">
+                                <input type="text" class="form-control" id="estado" placeholder="SP" name="estado">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="cidade" class="form-label">Cidade:</label>
-                                <input type="text" class="form-control" id="cidade" placeholder="São Paulo">
+                                <input type="text" class="form-control" id="cidade" placeholder="São Paulo" name="cidade">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Salvar Mudanças</button>
                             </div>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Salvar Mudanças</button>
-                    </div>
+
                 </div>
             </div>
         </div>
