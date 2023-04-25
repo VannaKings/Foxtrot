@@ -6,6 +6,7 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CarrinhoController;
+use App\Http\Controllers\EnderecoController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,7 +30,9 @@ Route::get('/produtos', [ProdutoController::class, 'produtos'])->name('produtos'
 
 Route::get('/cadastro', [UserController::class, 'index']);
 
-Route::get('/perfil', [UserController::class, 'perfil']);
+Route::get('/perfil', [EnderecoController::class, 'index'])->name('perfil');
+Route::post('/perfil/adicionar', [EnderecoController::class, 'store'])->name('endereco.store');
+Route::post('/perfil/deletar/{endereco}', [EnderecoController::class, 'delete'])->name('endereco.delete');
 
 Route::get('/pedidos', [UserController::class, 'pedidos']);
 
@@ -39,3 +42,4 @@ Route::post('/carrinho/{produto}', [CarrinhoController::class, 'store'])->name('
 Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.index');
 
 Route::post('/carrinho/alterar/{produto}', [CarrinhoController::class, 'alterar'])->name('carrinho.alterar');
+
