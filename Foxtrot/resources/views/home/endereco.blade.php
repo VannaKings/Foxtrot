@@ -33,35 +33,36 @@
         </div>
 
         <div class="container" style="display:flex; justify-content:center; background-color:whitesmoke; padding: 50px 200px">
-            <form class="row g-3">
-
+            <form class="row g-3" method='post' action='/endereco/altera/{{$endereco->ENDERECO_ID}}'>
+                @csrf
+                <input type="hidden" name="id" value="{{$endereco->ENDERECO_ID}}">
                 <div class="mb-3 col-md-6">
                     <label for="rua" class="form-label">Nome:</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Casa/Escritório">
+                    <input type="text" class="form-control" id="nome" placeholder="Casa/Escritório" name='nome'>
                 </div>
                 <div class="mb-3 col-md-6">
                     <label for="cep" class="form-label">CEP:</label>
-                    <input type="text" class="form-control" id="cep" placeholder="11220-330">
+                    <input type="text" class="form-control" id="cep" placeholder="11220-330" name='cep'>
                 </div>
                 <div class="mb-3 col-md-12">
                     <label for="rua" class="form-label">Rua:</label>
-                    <input type="text" class="form-control" id="rua" placeholder="Avenida Maria Coelho de Aguiar">
+                    <input type="text" class="form-control" id="rua" placeholder="Avenida Maria Coelho de Aguiar" name= 'logradouro'>
                 </div>
                 <div class="mb-3 col-md-6">
                     <label for="numero" class="form-label">Número:</label>
-                    <input type="text" class="form-control" id="numero" placeholder="123">
+                    <input type="text" class="form-control" id="numero" placeholder="123" name ='numero'>
                 </div>
                 <div class="mb-3 col-md-6">
                     <label for="complemento" class="form-label">Complemento:</label>
-                    <input type="text" class="form-control" id="complemento" placeholder="Casa, Apartamento (opcional)">
+                    <input type="text" class="form-control" id="complemento" placeholder="Casa, Apartamento (opcional)" name = 'complemento'>
                 </div>
                 <div class="mb-3 col-md-6">
                     <label for="estado" class="form-label">Estado:</label>
-                    <input type="text" class="form-control" id="estado" placeholder="SP">
+                    <input type="text" class="form-control" id="estado" placeholder="SP" name = 'estado'>
                 </div>
                 <div class="mb-3 col-md-6">
                     <label for="cidade" class="form-label">Cidade:</label>
-                    <input type="text" class="form-control" id="cidade" placeholder="São Paulo">
+                    <input type="text" class="form-control" id="cidade" placeholder="São Paulo" name = 'cidade'>
 
                 </div>
 

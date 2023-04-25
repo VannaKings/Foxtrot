@@ -51,4 +51,23 @@ class EnderecoController extends Controller
         ]);
         return redirect(route('perfil'));
     }
+
+    public function show(Endereco $endereco){
+        return view('home.endereco',['endereco'=>$endereco]);
+    }
+
+    public function alterar($endereco, Request $request){
+        $enredecoNovo = Endereco::where('ENDERECO_ID',$endereco)->first();
+        $enredecoNovo->update([
+            'ENDERECO_NOME' => $request->nome == '' ? $enredecoNovo->ENDERECO_NOME : $request->nome,
+            'ENDERECO_LOGRADOURO' => $request->logradouro == '' ? $enredecoNovo->ENDERECO_LOGRADOURO : $request->logradouro,
+            'ENDERECO_NUMERO' => $request->numero == '' ? $enredecoNovo->ENDERECO_NUMERO : $request->numero,
+            'ENDERECO_COMPLEMENTO' => $request->complemento == '' ? $enredecoNovo->ENDERECO_COMPLEMENTO : $request->complemento,
+            'ENDERECO_CEP' => $request->cep == '' ? $enredecoNovo->ENDERECO_CEP : $request->cep,
+            'ENDERECO_CIDADE' => $request->cidade == '' ? $enredecoNovo->ENDERECO_CIDADE : $request->cidade,
+            'ENDERECO_ESTADO' => $request->estado == '' ? $enredecoNovo->ENDERECO_ESTADO : $request->estado
+
+        ]);
+        return redirect(route('perfil'));
+    }
 }

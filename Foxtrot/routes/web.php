@@ -34,12 +34,16 @@ Route::get('/perfil', [EnderecoController::class, 'index'])->name('perfil');
 Route::post('/perfil/adicionar', [EnderecoController::class, 'store'])->name('endereco.store');
 Route::post('/perfil/deletar/{endereco}', [EnderecoController::class, 'delete'])->name('endereco.delete');
 
+
 Route::get('/pedidos', [UserController::class, 'pedidos']);
 
-Route::get('/endereco', [UserController::class, 'endereco']);
+// Route::get('/endereco', [UserController::class, 'endereco']);
+Route::get('/endereco/{endereco}', [EnderecoController::class, 'show'])->name('endereco.index');
+Route::post('/endereco/altera/{endereco}',[EnderecoController::class, 'alterar']);
 
 Route::post('/carrinho/{produto}', [CarrinhoController::class, 'store'])->name('carrinho.store');
 Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.index');
 
 Route::post('/carrinho/alterar/{produto}', [CarrinhoController::class, 'alterar'])->name('carrinho.alterar');
+
 

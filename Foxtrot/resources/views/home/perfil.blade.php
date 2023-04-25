@@ -102,7 +102,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5>Endereço Principal</h5>
                                 <div>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <a href="/endereco/{{$endereco->ENDERECO_ID}}"><button type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></button></a>
                                     <form action="/perfil/deletar/{{$endereco->ENDERECO_ID}}" method="post">
                                         @csrf
                                         <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
@@ -169,7 +169,7 @@
                             </div>
                             <div class="mb-3 col-md-12">
                                 <label for="rua" class="form-label">Rua:</label>
-                                <input type="text" class="form-control" id="rua" placeholder="Avenida Maria Coelho de Aguiar">
+                                <input type="text" class="form-control" id="rua" placeholder="Avenida Maria Coelho de Aguiar" nome = "logradouro">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="numero" class="form-label">Número:</label>
