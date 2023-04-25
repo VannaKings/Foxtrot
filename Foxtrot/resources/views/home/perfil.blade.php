@@ -99,7 +99,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5>Endereço Principal</h5>
                                 <div>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <a href="" class="btn btn-primary" data-bs-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                                 </div>
                                 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enderecoModal"><i class="fa-solid fa-pen-to-square"></i></button> -->
@@ -139,12 +139,12 @@
             </div>
         </div>
 
-        <!-- Modal para editar/adicionar endereço -->
+        <!-- Modal para adicionar endereço -->
         <div class="modal fade" id="enderecoModal" tabindex="-1" aria-labelledby="enderecoModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title" id="enderecoModalLabel">Adicionar/Editar</h2>
+                        <h2 class="modal-title" id="enderecoModalLabel">Adicionar</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -160,7 +160,7 @@
                             </div>
                             <div class="mb-3 col-md-12">
                                 <label for="rua" class="form-label">Rua:</label>
-                                <input type="text" class="form-control" id="rua" placeholder="Sua rua">
+                                <input type="text" class="form-control" id="rua" placeholder="Avenida Maria Coelho de Aguiar">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="numero" class="form-label">Número:</label>
@@ -182,7 +182,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Salvar Mudanças</button>
+                        <button type="button" class="btn btn-primary">Salvar</button>
                     </div>
                 </div>
             </div>

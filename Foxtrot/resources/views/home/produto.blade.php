@@ -54,18 +54,22 @@
                         @csrf
                             @if($produto->getEstoque() != "Indisponível")
                             <div class="adicionar">
-                                <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
-                                <input type="number" name = "qtd">
-                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
-                                <button type='submit' class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Adicionar</button>
+                                <a class="btn btn-primary" onclick="menos()" ><i class="fa-solid fa-minus"></i></a>
+                                    <input type="number" name ="qtd" id="total" style="text-align: center;">
+                                <a class="btn btn-primary" onclick="mais()"><i class="fa-solid fa-plus"></i></a>
                             </div>
+                            <button type='submit' class="btn btn-success" style="margin-top: 20px">
+                                <i class="fa-solid fa-cart-shopping" style="margin-right: 5px"></i>Adicionar
+                            </button>
                             @else
                             <div class="adicionar">
-                                <button class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
-                                <input type="number" name = "qtd">
-                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
-                                <button class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Adicionar</button>
+                                <a class="btn btn-primary" onclick="menos()"><i class="fa-solid fa-minus"></i></a>
+                                    <input type="number" name = "qtd" id="total" style="text-align: center;">
+                                <a class="btn btn-primary" onclick="mais()"><i class="fa-solid fa-plus"></i></a>
                             </div>
+                            <button type='submit' class="btn btn-success" style="margin-top: 20px">
+                                <i class="fa-solid fa-cart-shopping" style="margin-right: 5px"></i>Adicionar
+                            </button>
                             @endif
                         </form>
                     </div>

@@ -57,4 +57,8 @@ class UserController extends Controller
     public function carrinho(){
         return view('home.carrinho');
     }
+
+    public function endereco(){
+        return view('home.endereco');
+    }
 }

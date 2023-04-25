@@ -47,9 +47,9 @@
                                         <h5 class="card-title">{{$produto->Produto->PRODUTO_NOME}}</h5>
                                         <p class="card-text">Preço: R$ {{$produto->Produto->getPrecoDesconto()}}</p>
                                         <div class="card-text" style="display:flex; justify-content:center">
-                                            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-minus"></i></button>
-                                                <input type="number" style="width: 40px; text-align: center;" placeholder = '{{$produto->ITEM_QTD}}' name= "qtd" value="{{$produto->ITEM_QTD}}">
-                                            <button  type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
+                                            <button type="submit" class="btn btn-primary" onclick="menos()"><i class="fa-solid fa-minus"></i></button>
+                                                <input type="number" style="width: 40px; text-align: center;" placeholder = '{{$produto->ITEM_QTD}}' name= "qtd" value="{{$produto->ITEM_QTD}}" id="total">
+                                            <button  type="submit" class="btn btn-primary" onclick="mais()"><i class="fa-solid fa-plus"></i></button>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-danger" style="margin-bottom: 10px"><i class="fa-solid fa-trash-can" style="margin-right: 10px"></i>Remover</button>

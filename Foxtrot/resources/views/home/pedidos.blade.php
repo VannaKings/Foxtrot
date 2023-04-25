@@ -27,7 +27,7 @@
     @section('main')
     <div class="espaco"></div>
 
-    <div class="container">
+    <div class="container" style="margin-bottom:40px">
         <div class="area-titulo">
             <h3 class="titulo">Histórico de Pedidos</h3>
         </div>

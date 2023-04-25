@@ -12,6 +12,13 @@
     --vermelho: #ff5052;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
 .area-titulo{
     width: 100%;
     background-color: var(--laranja);

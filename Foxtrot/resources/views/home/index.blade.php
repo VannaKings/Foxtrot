@@ -45,7 +45,7 @@
       <div class="card" style="width: 18rem;">
         <img src="{{$produto->getFirstImage()}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
+          <h6 class="card-title" style="max-height:24px">{{$produto->PRODUTO_NOME}}</h6>
           <p class="card-text">Preço: R$ {{number_format($produto->PRODUTO_PRECO,2,",",".")}}</p>
           <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-primary">Ver mais</a>
         </div>

@@ -13,6 +13,13 @@
     --vermelho: #ff5052;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
 h2
 {
     max-width: 400px;
@@ -102,46 +109,14 @@ h2
 
 .adicionar{
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
 .adicionar input
 {
-    border: 1px solid var(--cinza);
     height: 30px;
-    max-width: 100px;
-    border-radius: 20px;
-    margin: 0 5px;
+    max-width: 40px;
 }
-
-.adicionar button
-{
-    border: 2px solid blue;
-    background-color: white!important;
-    border-radius: 100%;
-    color: blue;
-}
-
-.adicionar button:hover
-{
-    border: 2px solid blue;
-    background-color: white!important;
-    border-radius: 100%;
-    color: blue;
-}
-
-.adicionar a
-{
-    margin-left: 10px;
-}
-
-.adicionar a i
-{
-    margin-right: 10px;
-}
-
-
 
 .img-list-editar
 {
