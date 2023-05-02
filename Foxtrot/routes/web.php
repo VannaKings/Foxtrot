@@ -46,4 +46,4 @@ Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.in
 
 Route::post('/carrinho/alterar/{produto}', [CarrinhoController::class, 'alterar'])->name('carrinho.alterar');
 
-
+Route::get('/usuario/alterar/{usuario}', [UserController::class, 'alterar'])->name('user.update');

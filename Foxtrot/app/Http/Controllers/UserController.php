@@ -61,4 +61,8 @@ class UserController extends Controller
     public function endereco(){
         return view('home.endereco');
     }
+
+    public function alterar(){
+        return view('home.usuario');
+    }
 }
