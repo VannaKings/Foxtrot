@@ -48,7 +48,7 @@
 
                         <p id='preco-antigo'>De: <strong class='preco-antigo'>R$ <s>{{$produto->PRODUTO_PRECO}}</s></strong></p>
                         <p class='preco-destaque'>R$ {{$produto->getPrecoDesconto()}} </p>
-                        <p class='informacoes-texto'>Categoria: {{$produto->Categoria->CATEGORIA_NOME}}</p>
+                        <p class='informacoes-texto'>Categoria: {{$produto->Categoria->getCategoriaNome()}}</p>
                         <p class='informacoes-texto'><i class='fa-solid fa-box' style='margin-right:10px;'></i>Estoque: {{$produto->getEstoque()}}</p>
                         <form action="/carrinho/{{$produto->PRODUTO_ID}}" method = "POST" >
                         @csrf

@@ -18,4 +18,12 @@ class Categoria extends Model
     public function Produtos(){
         return $this->hasMany(Produto::class, 'CATEGORIA_ID', 'CATEGORIA_ID');
     }
+
+    public function getCategoriaNome(){
+        $nome = $this->CATEGORIA_NOME;
+        $nome = strtolower($nome);
+        $nome = ucfirst($nome);
+        return $nome;
+
+    }
 }

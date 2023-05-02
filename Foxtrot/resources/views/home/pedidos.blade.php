@@ -42,13 +42,15 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($pedidos as $pedido)
                 <tr>
-                    <td>001</td>
-                    <td>01/01/2023</td>
-                    <td>R$ 100,00</td>
+                    <td>{{$pedido->PEDIDO_ID}}</td>
+                    <td>{{date_format($pedido->PEDIDO_DATA,'d/m/Y')}}</td>
+                    <td>R$ {{$pedido->getTotalPrice()}}</td>
                     <td><button class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></button></td>
                 </tr>
-                <tr>
+                @endforeach
+                <!-- <tr>
                     <td>002</td>
                     <td>02/01/2023</td>
                     <td>R$ 200,00</td>
@@ -59,7 +61,7 @@
                     <td>03/01/2023</td>
                     <td>R$ 300,00</td>
                     <td><button class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></button></td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>
