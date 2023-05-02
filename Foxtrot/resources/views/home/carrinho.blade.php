@@ -42,7 +42,7 @@
                             <div class="card" style="width: 18rem;">
                                 <form action="/carrinho/alterar/{{$produto->PRODUTO_ID}}" method = "POST">
                                 @csrf
-                                    <img src="/images/placeholder-9.png" alt="Nome do Produto" class="card-img-top" style="max-height:120px">
+                                    <img src="{{$produto->Produto->getFirstImage()}}" alt="Nome do Produto" class="card-img-top" style="max-height:120px">
                                     <div class="card-body">
                                         <h5 class="card-title">{{$produto->Produto->PRODUTO_NOME}}</h5>
                                         <p class="card-text">Preço: R$ {{$produto->Produto->getPrecoDesconto()}}</p>
@@ -52,7 +52,8 @@
                                             <button  type="submit" class="btn btn-primary" onclick="mais()"><i class="fa-solid fa-plus"></i></button>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-danger" style="margin-bottom: 10px"><i class="fa-solid fa-trash-can" style="margin-right: 10px"></i>Remover</button>
+                                    <button type="submit" class="btn btn-secondary" style="margin-bottom: 10px">Alterar</button>
+                                    <button type="submit" class="btn btn-danger" style="margin-bottom: 10px" formaction="/carrinho/delete/{{$produto->PRODUTO_ID}}"><i class="fa-solid fa-trash-can" style="margin-right: 10px"></i>Remover</button>
                                 </form>
                             </div>
 
@@ -79,7 +80,11 @@
 
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary ">Finalizar Compra</a>
+                            <form method='post'>
+                                @csrf
+
+                                <button type="submit" class="btn btn-primary" formaction="/pedido/feito/{{Auth::user()->USUARIO_ID}}" >Finalizar Compra</button>
+                            </form>
                         </div>
                     </div>
                 </div>

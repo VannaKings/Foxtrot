@@ -113,7 +113,7 @@
                             <div class="mt-2">
                                 <p><strong>Nome:</strong> {{$endereco->ENDERECO_NOME}}</p>
                                 <p><strong>CEP:</strong> {{$endereco->ENDERECO_CEP}}</p>
-                                <p><strong>Rua:</strong> {{$endereco->ENDERECO_LOGRADOURO}}, {{$endereco->ENDERECO_NUMERO}}</p>
+                                <p><strong>Logradouro:</strong> {{$endereco->ENDERECO_LOGRADOURO}}, {{$endereco->ENDERECO_NUMERO}}</p>
                                 <p><strong>Cidade:</strong> {{$endereco->ENDERECO_CIDADE}}</p>
                                 <p><strong>Estado:</strong> {{$endereco->ENDERECO_ESTADO}}</p>
                             </div>
@@ -160,7 +160,7 @@
                         <form class="row g-3" method="post" action="/perfil/adicionar">
                             @csrf
                             <div class="mb-3 col-md-6">
-                                <label for="rua" class="form-label">Nome:</label>
+                                <label for="nome" class="form-label">Nome:</label>
                                 <input type="text" class="form-control" id="nome" placeholder="Casa/Escritório" name="nome">
                             </div>
                             <div class="mb-3 col-md-6">
@@ -168,8 +168,8 @@
                                 <input type="text" class="form-control" id="cep" placeholder="11220-330" name="cep">
                             </div>
                             <div class="mb-3 col-md-12">
-                                <label for="rua" class="form-label">Rua:</label>
-                                <input type="text" class="form-control" id="rua" placeholder="Avenida Maria Coelho de Aguiar" nome = "logradouro">
+                                <label for="rua" class="form-label">Logradouro:</label>
+                                <input type="text" class="form-control" id="rua" placeholder="Avenida Maria Coelho de Aguiar" name = "logradouro">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="numero" class="form-label">Número:</label>

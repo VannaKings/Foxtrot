@@ -46,13 +46,13 @@
                   <div class="filter-box">
                 @foreach($categorias as $categoria)
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                      <input class="form-check-input" type="checkbox" value="{{$categoria->CATEGORIA_ID}}" id="flexCheckDefault" checked>
                       <label class="form-check-label" for="flexCheckDefault">
-                        {{$categoria->CATEGORIA_NOME}}
+                        {{$categoria->getCategoriaNome()}}
                       </label>
                     </div>
                 @endforeach
-                    <div class="form-check">
+                    <!-- <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                       <label class="form-check-label" for="flexCheckDefault">
                         Pelúcia
@@ -129,7 +129,7 @@
                       <label class="form-check-label" for="flexCheckChecked">
                         Fun
                       </label>
-                    </div>
+                    </div> -->
                   </div>
               </div>
 

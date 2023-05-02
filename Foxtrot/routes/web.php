@@ -8,6 +8,8 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\EnderecoController;
 
+use App\Http\Controllers\PedidoController;
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -35,7 +37,7 @@ Route::post('/perfil/adicionar', [EnderecoController::class, 'store'])->name('en
 Route::post('/perfil/deletar/{endereco}', [EnderecoController::class, 'delete'])->name('endereco.delete');
 
 
-Route::get('/pedidos', [UserController::class, 'pedidos']);
+Route::get('/pedidos', [PedidoController::class, 'show']);
 
 // Route::get('/endereco', [UserController::class, 'endereco']);
 Route::get('/endereco/{endereco}', [EnderecoController::class, 'show'])->name('endereco.index');
@@ -45,5 +47,6 @@ Route::post('/carrinho/{produto}', [CarrinhoController::class, 'store'])->name('
 Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.index');
 
 Route::post('/carrinho/alterar/{produto}', [CarrinhoController::class, 'alterar'])->name('carrinho.alterar');
+Route::post('/carrinho/delete/{produto}', [CarrinhoController::class, 'delete'])->name('carrinho.delete');
 
-
+Route::post('/pedido/feito/{usuario}', [PedidoController::class, 'store'])->name('pedido.feito');
