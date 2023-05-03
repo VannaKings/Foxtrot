@@ -49,5 +49,5 @@ Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.in
 Route::post('/carrinho/alterar/{produto}', [CarrinhoController::class, 'alterar'])->name('carrinho.alterar');
 Route::post('/carrinho/delete/{produto}', [CarrinhoController::class, 'delete'])->name('carrinho.delete');
 
-Route::get('/usuario/alterar/{usuario}', [UserController::class, 'alterar'])->name('user.update');
+Route::get('/usuario/alterar', [UserController::class, 'alterar'])->name('user.update');
 Route::post('/pedido/feito/{usuario}', [PedidoController::class, 'store'])->name('pedido.feito');

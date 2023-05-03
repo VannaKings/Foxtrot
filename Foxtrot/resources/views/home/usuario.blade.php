@@ -29,41 +29,28 @@
 
     <div class="container" style="margin-bottom:40px">
         <div class="area-titulo">
-            <h3 class="titulo" style="text-align:center">Alterar Endereço</h3>
+            <h3 class="titulo" style="text-align:center">Alterar informações</h3>
         </div>
 
         <div class="container" style="display:flex; justify-content:center; background-color:whitesmoke; padding: 50px 200px">
-            <form class="row g-3" method='post' action='/endereco/altera/{{$endereco->ENDERECO_ID}}'>
+            <form class="row g-3" method='post' action=''>
                 @csrf
-                <input type="hidden" name="id" value="{{$endereco->ENDERECO_ID}}">
+                <input type="hidden" name="id" value="">
                 <div class="mb-3 col-md-6">
                     <label for="rua" class="form-label">Nome:</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Casa/Escritório" name='nome'>
+                    <input type="text" class="form-control" id="nome" placeholder="Epaminondas" name='nome'>
                 </div>
                 <div class="mb-3 col-md-6">
-                    <label for="cep" class="form-label">CEP:</label>
-                    <input type="text" class="form-control" id="cep" placeholder="11220-330" name='cep'>
-                </div>
-                <div class="mb-3 col-md-12">
-                    <label for="rua" class="form-label">Rua:</label>
-                    <input type="text" class="form-control" id="rua" placeholder="Avenida Maria Coelho de Aguiar" name= 'logradouro'>
+                    <label for="rua" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="rua" placeholder="epaminondas@gmail.com" name= 'email'>
                 </div>
                 <div class="mb-3 col-md-6">
-                    <label for="numero" class="form-label">Número:</label>
-                    <input type="text" class="form-control" id="numero" placeholder="123" name ='numero'>
+                    <label for="numero" class="form-label">Senha:</label>
+                    <input type="password" class="form-control" id="senha" name ='senha'>
                 </div>
                 <div class="mb-3 col-md-6">
-                    <label for="complemento" class="form-label">Complemento:</label>
-                    <input type="text" class="form-control" id="complemento" placeholder="Casa, Apartamento (opcional)" name = 'complemento'>
-                </div>
-                <div class="mb-3 col-md-6">
-                    <label for="estado" class="form-label">Estado:</label>
-                    <input type="text" class="form-control" id="estado" placeholder="SP" name = 'estado'>
-                </div>
-                <div class="mb-3 col-md-6">
-                    <label for="cidade" class="form-label">Cidade:</label>
-                    <input type="text" class="form-control" id="cidade" placeholder="São Paulo" name = 'cidade'>
-
+                    <label for="numero" class="form-label">Confirmar senha:</label>
+                    <input type="password" class="form-control" id="senha2" name ='senha2'>
                 </div>
 
                 <button type="submit" class="mb-3 col-md-3 btn btn-primary" style="margin: 10px"> Salvar </button>

@@ -46,7 +46,7 @@
                   <div class="filter-box">
                 @foreach($categorias as $categoria)
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="{{$categoria->CATEGORIA_ID}}" id="flexCheckDefault" checked>
+                      <input class="form-check-input" type="checkbox" value="{{$categoria->CATEGORIA_ID}}" id="flexCheckDefault">
                       <label class="form-check-label" for="flexCheckDefault">
                         {{$categoria->getCategoriaNome()}}
                       </label>
