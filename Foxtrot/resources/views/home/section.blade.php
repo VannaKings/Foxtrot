@@ -44,14 +44,19 @@
                   </div>
                   <p>Categorias</p>
                   <div class="filter-box">
-                @foreach($categorias as $categoria)
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="{{$categoria->CATEGORIA_ID}}" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        {{$categoria->getCategoriaNome()}}
-                      </label>
-                    </div>
-                @endforeach
+                <form action="{{route('produtos.filtrado')}}" method='post'>
+                @csrf
+                    @foreach($categorias as $categoria)
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="{{$categoria->CATEGORIA_ID}}" id="flexCheckDefault" name='check{{$categoria->CATEGORIA_ID}}'>
+                        <label class="form-check-label" for="flexCheckDefault">
+                            {{$categoria->getCategoriaNome()}}
+                        </label>
+                        </div>
+                    @endforeach
+                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                </form>
+
                     <!-- <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                       <label class="form-check-label" for="flexCheckDefault">
@@ -137,17 +142,17 @@
 
               <div class="container-nav-produtos">
                 @foreach($produtos as $produto)
-                <div class="card">
-                  <img src="{{$produto->getFirstImage()}}" class="card-img-top" alt=".">
-                  <div class="card-body">
-                    <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
-                    <p class="card-text">Preço: R$ {{$produto->getPrecoDesconto()}}</p>
-                    <div class="buttons">
-                      <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-secondary"><i class="fa-solid fa-magnifying-glass"></i>Ver mais</a>
-                      <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Adicionar</a>
+                    <div class="card">
+                        <img src="{{$produto->getFirstImage()}}" class="card-img-top" alt=".">
+                        <div class="card-body">
+                        <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
+                        <p class="card-text">Preço: R$ {{$produto->getPrecoDesconto()}}</p>
+                        <div class="buttons">
+                            <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-secondary"><i class="fa-solid fa-magnifying-glass"></i>Ver mais</a>
+                            <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Adicionar</a>
+                        </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
                 @endforeach
 
               </div>

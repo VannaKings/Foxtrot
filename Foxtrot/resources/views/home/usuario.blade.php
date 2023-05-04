@@ -33,7 +33,7 @@
         </div>
 
         <div class="container" style="display:flex; justify-content:center; background-color:whitesmoke; padding: 50px 200px">
-            <form class="row g-3" method='post' action=''>
+            <form class="row g-3" method='post' action='/usuario/alterar'>
                 @csrf
                 <input type="hidden" name="id" value="">
                 <div class="mb-3 col-md-6">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="mb-3 col-md-6">
                     <label for="rua" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="rua" placeholder="epaminondas@gmail.com" name= 'email'>
+                    <input type="email" class="form-control" id="email" placeholder="epaminondas@gmail.com" name= 'email'>
                 </div>
                 <div class="mb-3 col-md-6">
                     <label for="numero" class="form-label">Senha:</label>

@@ -47,7 +47,7 @@
                             <li class="list-group-item"><strong>E-mail:</strong> {{Auth::user()->USUARIO_EMAIL}}</li>
                             <li class="list-group-item"><strong>CPF:</strong> {{Auth::user()->USUARIO_CPF}}</li>
                         </ul>
-                        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#editarInfoModal">Editar Informações</button>
+                        <a href="/usuario"><button type="button" class="btn btn-primary mt-3">Editar Informações</button></a>
                     </div>
 
                 </div>

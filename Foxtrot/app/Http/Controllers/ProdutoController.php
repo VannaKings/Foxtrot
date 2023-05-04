@@ -37,7 +37,7 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto){
         $maisProdutos = Categoria::find($produto->CATEGORIA_ID)->Produtos;
-        $produtos = Produto::all();
+        $produtos = Produto::where('PRODUTO_ATIVO',1)->get();
         return view('home.produto',['produto'=>$produto, 'produtos'=>$produtos, 'maisProdutos'=> $maisProdutos]);
     }
 
@@ -66,14 +66,33 @@ class ProdutoController extends Controller
     }
 
     public function home(){
-        return view('home.index')->with('produtos', Produto::all());
+        return view('home.index')->with('produtos', Produto::where('PRODUTO_ATIVO',1)->get());
     }
 
     public function produtos(){
-        $categorias = Categoria::all();
-        $produtos = Produto::all();
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
+        $produtos = Produto::where('PRODUTO_ATIVO',1)->get();
         return view('home.section',['produtos'=> $produtos, 'categorias' => $categorias]);
     }
 
+    public function filtro(Request $request){
+        $categoriasSelecionadas = [];
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
+        foreach($categorias as $categoria){
+            $id = $categoria->CATEGORIA_ID;
+            $name = 'check'.$id;
+            if(isset($request->$name)){
+                array_push($categoriasSelecionadas, $id);
+            }
+        }
+        $categoriasFiltradas = Categoria::findMany($categoriasSelecionadas);
+        $produtos = Produto::whereIn('CATEGORIA_ID', $categoriasSelecionadas)->get();
+        if(count($categoriasFiltradas) === 0){
+            $categoriasFiltradas = $categorias;
+            $produtos = Produto::where('PRODUTO_ATIVO',1)->get();
+        }
+
+        return view('home.section',['produtos'=> $produtos, 'categorias' => $categorias , 'categoriasFiltradas' => $categoriasFiltradas]);
+    }
 
 }

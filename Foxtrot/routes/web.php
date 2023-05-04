@@ -29,7 +29,7 @@ Route::post('/', [UserController::class, 'store'])->name('registrar');
 Route::get('/produto/{produto}', [ProdutoController::class, 'show']);
 
 Route::get('/produtos', [ProdutoController::class, 'produtos'])->name('produtos');
-
+Route::post('/produtos/filtrado',  [ProdutoController::class, 'filtro'])->name('produtos.filtrado');
 Route::get('/cadastro', [UserController::class, 'index']);
 
 Route::get('/perfil', [EnderecoController::class, 'index'])->name('perfil');
@@ -49,5 +49,8 @@ Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.in
 Route::post('/carrinho/alterar/{produto}', [CarrinhoController::class, 'alterar'])->name('carrinho.alterar');
 Route::post('/carrinho/delete/{produto}', [CarrinhoController::class, 'delete'])->name('carrinho.delete');
 
-Route::get('/usuario/alterar', [UserController::class, 'alterar'])->name('user.update');
+Route::get('/usuario', [UserController::class, 'show'])->name('user');
+Route::post('/usuario/alterar', [UserController::class, 'alterar'])->name('user.update');
+
+
 Route::post('/pedido/feito/{usuario}', [PedidoController::class, 'store'])->name('pedido.feito');
