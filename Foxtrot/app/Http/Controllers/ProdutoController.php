@@ -94,5 +94,4 @@ class ProdutoController extends Controller
 
         return view('home.section',['produtos'=> $produtos, 'categorias' => $categorias , 'categoriasFiltradas' => $categoriasFiltradas]);
     }
-
 }
