@@ -14,12 +14,14 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{url('/')}}">Inicio</a></li>
-                    <li><a class="dropdown-item" href="{{url('produtos')}}">Bonecas</a></li>
-                    <li><a class="dropdown-item" href="{{url('produtos')}}">Carrinhos</a></li>
+                    @foreach($categorias->take(6) as $categoria)
+                    <li><a class="dropdown-item" href="/produtos/{{$categoria->CATEGORIA_ID}}">{{$categoria->getCategoriaNome()}}</a></li>
+                    @endforeach
+                    <!-- <li><a class="dropdown-item" href="{{url('produtos')}}">Carrinhos</a></li>
                     <li><a class="dropdown-item" href="{{url('produtos')}}">Colecionaveis</a></li>
                     <li><a class="dropdown-item" href="{{url('produtos')}}">Lego</a></li>
                     <li><a class="dropdown-item" href="{{url('produtos')}}">Esportes</a></li>
-                    <li><a class="dropdown-item" href="{{url('produtos')}}">Bebês</a></li>
+                    <li><a class="dropdown-item" href="{{url('produtos')}}">Bebês</a></li> -->
                 </ul>
             </div>
 

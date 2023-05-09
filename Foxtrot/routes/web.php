@@ -30,6 +30,7 @@ Route::get('/produto/{produto}', [ProdutoController::class, 'show']);
 
 Route::get('/produtos', [ProdutoController::class, 'produtos'])->name('produtos');
 Route::post('/produtos/filtrado',  [ProdutoController::class, 'filtro'])->name('produtos.filtrado');
+Route::get('produtos/{categoria}', [ProdutoController::class, 'filtroMenu'])->name('filtro');
 Route::get('/cadastro', [UserController::class, 'index']);
 
 Route::get('/perfil', [EnderecoController::class, 'index'])->name('perfil');

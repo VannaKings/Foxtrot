@@ -66,7 +66,8 @@ class ProdutoController extends Controller
     }
 
     public function home(){
-        return view('home.index')->with('produtos', Produto::where('PRODUTO_ATIVO',1)->get());
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
+        return view('home.index',['produtos'=> Produto::where('PRODUTO_ATIVO',1)->get(), 'categorias'=> $categorias]);
     }
 
     public function produtos(){
@@ -93,5 +94,11 @@ class ProdutoController extends Controller
         }
 
         return view('home.section',['produtos'=> $produtos, 'categorias' => $categorias , 'categoriasFiltradas' => $categoriasFiltradas]);
+    }
+
+    public function filtroMenu(Categoria $categoria){
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
+        $produtos = Produto::where('PRODUTO_ATIVO',1)->where('CATEGORIA_ID', $categoria->CATEGORIA_ID)->get();
+        return view('home.section',['produtos'=> $produtos, 'categorias' => $categorias]);
     }
 }
