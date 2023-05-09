@@ -36,11 +36,15 @@
 
                 <div class="container-detalhes">
                     <!-- Imagens -->
+                    @if($produto->getImages())
                     <ul class="img-list">
-                        <li><img class='imgs' src="/images/placeholder-9.png" alt='Imagem do produto'></li>
-                        <li><img class='imgs' src="/images/placeholder-9.png" alt='Imagem do produto'></li>
-                        <li><img class='imgs' src="/images/placeholder-9.png" alt='Imagem do produto'></li>
+                        @foreach($produto->getImages() as $image)
+                        <li><img class='imgs' src="{{$image->IMAGEM_URL}}" alt='Imagem do produto'></li>
+                        <!-- <li><img class='imgs' src="/images/placeholder-9.png" alt='Imagem do produto'></li>
+                        <li><img class='imgs' src="/images/placeholder-9.png" alt='Imagem do produto'></li> -->
+                        @endforeach
                     </ul>
+                    @endif
                     <img class='img-principal' src="{{$produto->getFirstImage()}}" alt='Imagem principal'>
 
                     <div class="informacoes">

@@ -44,97 +44,15 @@
                   </div>
                   <p>Categorias</p>
                   <div class="filter-box">
-                <form action="{{route('produtos.filtrado')}}" method='post'>
-                @csrf
-                    @foreach($categorias as $categoria)
-                        <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="{{$categoria->CATEGORIA_ID}}" id="flexCheckDefault" name='check{{$categoria->CATEGORIA_ID}}'>
-                        <label class="form-check-label" for="flexCheckDefault">
-                            {{$categoria->getCategoriaNome()}}
-                        </label>
-                        </div>
-                    @endforeach
-                    <button type="submit" class="btn btn-primary">Filtrar</button>
-                </form>
-
-                    <!-- <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Pelúcia
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                      <label class="form-check-label" for="flexCheckChecked">
-                        Quebra-cabeça
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Bonecos
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                      <label class="form-check-label" for="flexCheckChecked">
-                        Playground
-                      </label>
-                    </div>
-                  </div>
-                  <p>Idade</p>
-                  <div class="filter-box">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                      <label class="form-check-label" for="flexCheckDefault">
-                        0 a 3 meses
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-                      <label class="form-check-label" for="flexCheckChecked">
-                        1 a 2 anos
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        3 a 6 anos
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-                      <label class="form-check-label" for="flexCheckChecked">
-                        10 a 11 anos
-                      </label>
-                    </div>
-                  </div>
-                  <p>Marca</p>
-                  <div class="filter-box">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Fisher Price
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                      <label class="form-check-label" for="flexCheckChecked">
-                        Estrela
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Lego
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-                      <label class="form-check-label" for="flexCheckChecked">
-                        Fun
-                      </label>
-                    </div> -->
+                    <ul>
+                        @foreach($categorias as $categoria)
+                            <li>
+                                <a href="/produtos/{{$categoria->CATEGORIA_ID}}">
+                                    {{$categoria->getCategoriaNome()}}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                   </div>
               </div>
 

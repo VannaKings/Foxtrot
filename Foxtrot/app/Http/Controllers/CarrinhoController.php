@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use App\Models\Categoria;
 use App\Models\Carrinho;
 use App\Models\Estoque;
 use Illuminate\Support\Facades\Auth;
@@ -30,8 +31,9 @@ class CarrinhoController extends Controller
         return redirect(route('carrinho.index'));
     }
     public function index(){
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
         $carrinho = Carrinho::where('USUARIO_ID', Auth::user()->USUARIO_ID)->get();
-        return view('home.carrinho')->with('carrinho', $carrinho);
+        return view('home.carrinho', ['carrinho'=> $carrinho, 'categorias' => $categorias]);
     }
 
     public function alterar(Produto $produto, Request $request){

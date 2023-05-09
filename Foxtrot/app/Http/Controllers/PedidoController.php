@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Estoque;
 use App\Models\Pedido;
 use App\Models\PedidoItem;
-
+use App\Models\Categoria;
 class PedidoController extends Controller
 {
     public function store(Carrinho $carrinho){
@@ -45,8 +45,9 @@ class PedidoController extends Controller
         return redirect(route('perfil'));
     }
     public function show(){
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
         $pedidos = Pedido::where('USUARIO_ID', Auth::user()->USUARIO_ID)->get();
-        return view('home.pedidos')->with('pedidos', $pedidos);
+        return view('home.pedidos',['pedidos'=> $pedidos, 'categorias' => $categorias]);
     }
 }
 

@@ -6,17 +6,20 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\Models\User;
 use App\Models\Produto;
+use App\Models\Categoria;
 use Auth;
 
 
 class UserController extends Controller
 {
+
     public function index(){
-        return view('cadastro.index');
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
+        return view('cadastro.index', ['categorias'=> $categorias]);
     }
 
     public function create(Request $request): RedirectResponse{
-
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
         // $user = User::create([
         //     'USUARIO_NOME' => ['USUARIO_NOME'],
         //     'USUARIO_EMAIL' => ['USUARIO_EMAIL'],
@@ -26,7 +29,7 @@ class UserController extends Controller
         // $user->save();
 
         // return redirect('/');
-        return view('cadastro.index');
+        return view('cadastro.index', ['categorias'=> $categorias]);
     }
 
     public function store(Request $request){
@@ -42,8 +45,9 @@ class UserController extends Controller
     }
 
     public function perfil(){
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
         if(Auth::check()){
-            return view('home.perfil');
+            return view('home.perfil', ['categorias'=> $categorias]);
         }
         else{
             abort(404);
@@ -52,18 +56,22 @@ class UserController extends Controller
     }
 
     public function pedidos(){
-        return view('home.pedidos');
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
+        return view('home.pedidos', ['categorias'=> $categorias]);
     }
 
     public function carrinho(){
-        return view('home.carrinho');
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
+        return view('home.carrinho', ['categorias'=> $categorias]);
     }
 
     public function endereco(){
-        return view('home.endereco');
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
+        return view('home.endereco', ['categorias'=> $categorias]);
     }
     public function show(){
-        return view('home.usuario');
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
+        return view('home.usuario', ['categorias'=> $categorias]);
     }
 
     public function alterar(Request $request){

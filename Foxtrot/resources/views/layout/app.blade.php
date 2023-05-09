@@ -14,7 +14,8 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{url('/')}}">Inicio</a></li>
-                    @foreach($categorias->take(6) as $categoria)
+                    <li><a class="dropdown-item" href="{{url('/produtos')}}">Todos os produtos</a></li>
+                    @foreach($categorias->take(5) as $categoria)
                     <li><a class="dropdown-item" href="/produtos/{{$categoria->CATEGORIA_ID}}">{{$categoria->getCategoriaNome()}}</a></li>
                     @endforeach
                     <!-- <li><a class="dropdown-item" href="{{url('produtos')}}">Carrinhos</a></li>

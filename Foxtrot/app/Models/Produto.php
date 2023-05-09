@@ -55,5 +55,15 @@ class Produto extends Model
         }
     }
 
+    public function getImages(){
+        $images = ProdutoImagem::where('PRODUTO_ID',$this->PRODUTO_ID)->get();
+        if($images != null){
+
+            return $images->slice(1);
+        }else{
+            return '/images/placeholder-9.png';
+        }
+    }
+
 
 }
