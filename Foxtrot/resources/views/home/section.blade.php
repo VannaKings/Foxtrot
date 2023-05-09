@@ -140,12 +140,12 @@
 
 
 
-              <div class="container-nav-produtos">
+              <div class="container-nav-produtos" style="min-width: 700px">
                 @foreach($produtos as $produto)
                     <div class="card">
                         <img src="{{$produto->getFirstImage()}}" class="card-img-top" alt=".">
                         <div class="card-body">
-                        <h5 class="card-title">{{$produto->PRODUTO_NOME}}</h5>
+                        <h6 class="card-title">{{$produto->PRODUTO_NOME}}</h6>
                         <p class="card-text">Preço: R$ {{$produto->getPrecoDesconto()}}</p>
                         <div class="buttons">
                             <a href="/produto/{{$produto->PRODUTO_ID}}" class="btn btn-secondary"><i class="fa-solid fa-magnifying-glass"></i>Ver mais</a>
