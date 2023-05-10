@@ -39,7 +39,7 @@
                     @if($produto->getImages())
                     <ul class="img-list">
                         @foreach($produto->getImages() as $image)
-                        <li><img class='imgs' src="{{$image->IMAGEM_URL}}" alt='Imagem do produto'></li>
+                        <li><img class='imgs imgs-secundarias' src="{{$image->IMAGEM_URL}}" alt='Imagem do produto'></li>
                         <!-- <li><img class='imgs' src="/images/placeholder-9.png" alt='Imagem do produto'></li>
                         <li><img class='imgs' src="/images/placeholder-9.png" alt='Imagem do produto'></li> -->
                         @endforeach
@@ -145,8 +145,7 @@
         </div>
     </section>
     @endsection
-
-
 </body>
-<!-- <script src="js/load.js"></script> -->
+
+
 </html>

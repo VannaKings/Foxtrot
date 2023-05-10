@@ -6,6 +6,7 @@
     --azul: #2487ee;
     --cinzaEscuro: #535562;
     --roxo: #7632d5;
+    --roxoClaro: #a679e5;
     --azulEsverdeado: #0BCBB0;
     --verde: #17ae27;
     --amarelo: #f0dc1b;
@@ -36,7 +37,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 10px auto;
     display: flex;
     justify-content: center;
-    z-index: +1;
+    z-index: +20;
     width: 100%;
 }
 
@@ -97,7 +98,7 @@ img{
 
 .secao-cabecalho
 {
-    background-color: rgb(231, 231, 231);
+    background-color: var(--roxoClaro);
     max-width: 100%;
     height: 100%;
     border-bottom-left-radius: 70px;
@@ -198,12 +199,17 @@ img{
     padding-top: 60px;
     border-top-right-radius: 70px;
     border-top-left-radius: 70px;
-    background-color: #ccc;
+    background-color: var(--roxo);
 }
 
 .container-footer h4{
     text-align: center;
     padding: 15px 0;
+    color: white;
+}
+
+.container-footer p{
+    color: white;
 }
 
 .container-footer .copyright{
@@ -216,6 +222,7 @@ img{
 .container-footer h5{
     text-transform: uppercase;
     margin-bottom: 12px;
+    color: white;
 }
 
 .content-footer{

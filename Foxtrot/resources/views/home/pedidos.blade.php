@@ -32,39 +32,98 @@
             <h3 class="titulo">Histórico de Pedidos</h3>
         </div>
 
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>ID do Pedido</th>
-                    <th>Data</th>
-                    <th>Total</th>
-                    <th>Comprar novamente</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($pedidos as $pedido)
-                <tr>
-                    <td>{{$pedido->PEDIDO_ID}}</td>
-                    <td>{{date_format($pedido->PEDIDO_DATA,'d/m/Y')}}</td>
-                    <td>R$ {{$pedido->getTotalPrice()}}</td>
-                    <td><button class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></button></td>
-                </tr>
-                @endforeach
-                <!-- <tr>
-                    <td>002</td>
-                    <td>02/01/2023</td>
-                    <td>R$ 200,00</td>
-                    <td><button class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></button></td>
-                </tr>
-                <tr>
-                    <td>003</td>
-                    <td>03/01/2023</td>
-                    <td>R$ 300,00</td>
-                    <td><button class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></button></td>
-                </tr> -->
-            </tbody>
-        </table>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Pedido #1
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body" style="display:flex; justify-content:space-around">
+                        <img src="/images/placeholder-9.png" alt="" style="max-width: 200px; max-height: 200px">
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Produto:</strong></p>
+                            <p> Nome </p>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Quantidade:</strong></p>
+                            <p> 1 </p>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Preço:</strong></p>
+                            <p> R$ 100,00 </p>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Endereço</strong></p>
+                            <p> Rua de tals, 30</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Pedido #2
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body" style="display:flex; justify-content:space-around">
+                        <img src="/images/placeholder-9.png" alt="" style="max-width: 200px; max-height: 200px">
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Produto:</strong></p>
+                            <p> Nome </p>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Quantidade:</strong></p>
+                            <p> 1 </p>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Preço:</strong></p>
+                            <p> R$ 100,00 </p>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Endereço</strong></p>
+                            <p> Rua de tals, 30</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Pedido #3
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body" style="display:flex; justify-content:space-around">
+                        <img src="/images/placeholder-9.png" alt="" style="max-width: 200px; max-height: 200px">
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Produto:</strong></p>
+                            <p> Nome </p>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Quantidade:</strong></p>
+                            <p> 1 </p>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Preço:</strong></p>
+                            <p> R$ 100,00 </p>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
+                            <p><strong>Endereço</strong></p>
+                            <p> Rua de tals, 30</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     @endsection
+
+
 </body>
 </html>

@@ -40,11 +40,11 @@
               <!-- FILTRO -->
               <div class="container-filtro">
                   <div class="titulo_filtro">
-                      <strong>FILTRO</strong>
+                      <strong>CATEGORIAS</strong>
                   </div>
-                  <p>Categorias</p>
+
                   <div class="filter-box">
-                    <ul>
+                    <ul class="lista-filtro">
                         @foreach($categorias as $categoria)
                             <li>
                                 <a href="/produtos/{{$categoria->CATEGORIA_ID}}">

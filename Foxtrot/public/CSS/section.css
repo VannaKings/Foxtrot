@@ -68,10 +68,11 @@ input[type=number]::-webkit-outer-spin-button {
 .container-filtro
 {
     max-width: 500px;
-    background-color: whitesmoke;
+    background-color: var(--laranja);
     padding: 50px;
     border-radius: 10px;
     margin-bottom: 50px;
+    max-height: 900px;
 }
 
 .container-filtro i{
@@ -88,20 +89,15 @@ input[type=number]::-webkit-outer-spin-button {
 {
     font-weight: bold;
     font-size: 24px;
+    color: white;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid rgba(201, 201, 201, 0.83);
+    margin-bottom: 20px
 }
 
 .container-filtro i
 {
     font-size: 24px;
-}
-
-.container-filtro p
-{
-    padding: 20px 0;
-    width: 100%;
-    font-size:20px;
-    border-bottom: 1px solid rgba(201, 201, 201, 0.83);
-    margin-bottom: 20px
 }
 
 .container-filtro .filter-box
@@ -115,8 +111,13 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 20px;
     cursor: pointer;
     text-decoration: none;
-    color:var(--preto) ;
+    color: white ;
     border: none;
+}
+
+.container-filtro a:hover{
+    font-weight: bold;
+    color: white;
 }
 
 
@@ -146,4 +147,16 @@ input[type=number]::-webkit-outer-spin-button {
 {
     font-size: 13px;
     margin-right: 4px;
+}
+
+.lista-filtro{
+    list-style: none;
+    width: 100%;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.lista-filtro li{
+    max-width: 100%;
+    padding: 10px 0;
 }
