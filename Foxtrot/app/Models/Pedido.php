@@ -29,4 +29,7 @@ class Pedido extends Model
         }
         return number_format($totalPrice,2,',', '.');
     }
+    public function Status(){
+        return $this->belongsTo(PedidoStatus::class, 'STATUS_ID', 'STATUS_ID');
+    }
 }

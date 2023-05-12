@@ -17,4 +17,7 @@ class PedidoItem extends Model
     public function Pedido(){
         return $this->belongsTo(Pedido::class, 'PEDIDO_ID', 'PEDIDO_ID');
     }
+    public function Produto(){
+        return $this->belongsTo(Produto::class, 'PRODUTO_ID', 'PRODUTO_ID');
+    }
 }

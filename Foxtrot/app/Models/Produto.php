@@ -59,7 +59,7 @@ class Produto extends Model
         $images = ProdutoImagem::where('PRODUTO_ID',$this->PRODUTO_ID)->get();
         if($images != null){
 
-            return $images->slice(1);
+            return $images;
         }else{
             return '/images/placeholder-9.png';
         }

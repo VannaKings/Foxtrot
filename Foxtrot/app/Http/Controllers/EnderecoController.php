@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Endereco;
-
+use App\Models\Categoria;
 
 class EnderecoController extends Controller
 {
@@ -40,8 +40,9 @@ class EnderecoController extends Controller
     }
 
     public function index(){
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
         $endereco = Endereco::where('USUARIO_ID', Auth::user()->USUARIO_ID)->get();
-        return view('home.perfil')->with('endereco', $endereco);
+        return view('home.perfil',['endereco'=> $endereco,'categorias' => $categorias]);
     }
     public function delete($enderecos, Request $request){
 
@@ -53,7 +54,8 @@ class EnderecoController extends Controller
     }
 
     public function show(Endereco $endereco){
-        return view('home.endereco',['endereco'=>$endereco]);
+        $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
+        return view('home.endereco',['endereco'=>$endereco, 'categorias' => $categorias]);
     }
 
     public function alterar($endereco, Request $request){

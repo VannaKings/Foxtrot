@@ -33,36 +33,41 @@
         </div>
 
         <div class="accordion accordion-flush" id="accordionFlushExample">
+            @foreach($pedidos as $pedido)
             <div class="accordion-item">
+
                 <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Pedido #1
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne{{$pedido->PEDIDO_ID}}" aria-expanded="false" aria-controls="flush-collapseOne{{$pedido->PEDIDO_ID}}">
+                        Pedido #{{$pedido->PEDIDO_ID}}
                     </button>
                 </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                @foreach($pedido->PedidoItem as $pedidoItem)
+                <div id="flush-collapseOne{{$pedido->PEDIDO_ID}}" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body" style="display:flex; justify-content:space-around">
-                        <img src="/images/placeholder-9.png" alt="" style="max-width: 200px; max-height: 200px">
+                        <img src="{{$pedidoItem->Produto->getFirstImage()}}" alt="" style="max-width: 200px; max-height: 200px">
                         <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
                             <p><strong>Produto:</strong></p>
-                            <p> Nome </p>
+                            <p> {{$pedidoItem->Produto->PRODUTO_NOME}} </p>
                         </div>
                         <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
                             <p><strong>Quantidade:</strong></p>
-                            <p> 1 </p>
+                            <p> {{$pedidoItem->ITEM_QTD}} </p>
                         </div>
                         <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
                             <p><strong>Preço:</strong></p>
-                            <p> R$ 100,00 </p>
+                            <p> R${{ number_format(($pedidoItem->ITEM_QTD*$pedidoItem->ITEM_PRECO), 2, ',', '.') }} </p>
                         </div>
                         <div style="display:flex; flex-direction:column; align-items:center; justify-content: center">
-                            <p><strong>Endereço</strong></p>
-                            <p> Rua de tals, 30</p>
+                            <p><strong>Status</strong></p>
+                            <p>{{$pedido->Status->STATUS_DESC}}</p>
                         </div>
 
                     </div>
                 </div>
+                @endforeach
             </div>
-            <div class="accordion-item">
+            @endforeach
+            <!-- <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                         Pedido #2
@@ -119,7 +124,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     @endsection

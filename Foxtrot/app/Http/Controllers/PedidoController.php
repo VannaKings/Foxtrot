@@ -9,6 +9,8 @@ use App\Models\Estoque;
 use App\Models\Pedido;
 use App\Models\PedidoItem;
 use App\Models\Categoria;
+use App\Models\PedidoStatus;
+
 class PedidoController extends Controller
 {
     public function store(Carrinho $carrinho){
@@ -47,7 +49,8 @@ class PedidoController extends Controller
     public function show(){
         $categorias = Categoria::where('CATEGORIA_ATIVO', 1)->get();
         $pedidos = Pedido::where('USUARIO_ID', Auth::user()->USUARIO_ID)->get();
-        return view('home.pedidos',['pedidos'=> $pedidos, 'categorias' => $categorias]);
+        $status = PedidoStatus::all();
+        return view('home.pedidos',['pedidos'=> $pedidos, 'categorias' => $categorias, 'status' => $status]);
     }
 }
 
